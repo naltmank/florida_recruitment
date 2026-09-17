@@ -1,0 +1,1024 @@
+year,region,habitat,site_id,site_name,station_id,octocoral_density
+2011,UK,P,32,Porter Patch,321,9
+2011,UK,P,32,Porter Patch,322,
+2011,UK,P,32,Porter Patch,323,7.2
+2011,UK,P,32,Porter Patch,324,8.6
+2011,UK,P,33,Admiral,331,2.3
+2011,UK,P,33,Admiral,332,0.9
+2011,UK,P,33,Admiral,333,5.7
+2011,UK,P,33,Admiral,334,5.1
+2011,MK,P,34,West Turtle Shoal,341,
+2011,MK,P,34,West Turtle Shoal,342,
+2011,MK,P,34,West Turtle Shoal,343,
+2011,MK,P,34,West Turtle Shoal,344,
+2011,MK,P,35,Dustan Rocks,351,
+2011,MK,P,35,Dustan Rocks,352,
+2011,MK,P,35,Dustan Rocks,353,
+2011,MK,P,35,Dustan Rocks,354,
+2011,LK,P,36,West Washer Women,361,5.9
+2011,LK,P,36,West Washer Women,362,8.9
+2011,LK,P,36,West Washer Women,363,3.5
+2011,LK,P,36,West Washer Women,364,6.8
+2011,LK,P,38,Cliff Green,381,11.2
+2011,LK,P,38,Cliff Green,382,10.7
+2011,LK,P,38,Cliff Green,383,13.3
+2011,LK,P,38,Cliff Green,384,7.1
+2011,UK,OS,50,Carysfort Shallow,501,4.1
+2011,UK,OS,50,Carysfort Shallow,502,2
+2011,UK,OS,50,Carysfort Shallow,503,40.5
+2011,UK,OS,50,Carysfort Shallow,504,20.4
+2011,MK,OS,54,Alligator Shallow,541,23.2
+2011,MK,OS,54,Alligator Shallow,542,21.8
+2011,MK,OS,54,Alligator Shallow,543,28.4
+2011,MK,OS,54,Alligator Shallow,544,19.9
+2011,MK,OS,55,Tennessee Shallow,551,
+2011,MK,OS,55,Tennessee Shallow,552,
+2011,MK,OS,55,Tennessee Shallow,553,
+2011,MK,OS,55,Tennessee Shallow,554,
+2011,MK,OS,56,Sombrero Shallow,561,
+2011,MK,OS,56,Sombrero Shallow,562,
+2011,MK,OS,56,Sombrero Shallow,563,
+2011,MK,OS,56,Sombrero Shallow,564,
+2011,LK,OS,59,Western Sambo Shallow,591,10.9
+2011,LK,OS,59,Western Sambo Shallow,592,6.5
+2011,LK,OS,59,Western Sambo Shallow,593,4.5
+2011,LK,OS,59,Western Sambo Shallow,594,3.7
+2011,LK,OS,61,Sand Key Shallow,611,8.3
+2011,LK,OS,61,Sand Key Shallow,612,8.7
+2011,LK,OS,61,Sand Key Shallow,613,7
+2011,LK,OS,61,Sand Key Shallow,614,7.3
+2011,UK,OD,70,Carysfort Deep,701,19
+2011,UK,OD,70,Carysfort Deep,702,13.3
+2011,UK,OD,70,Carysfort Deep,703,10.7
+2011,UK,OD,70,Carysfort Deep,704,25.4
+2011,MK,OD,74,Alligator Deep,741,16.3
+2011,MK,OD,74,Alligator Deep,742,7.8
+2011,MK,OD,74,Alligator Deep,743,9.5
+2011,MK,OD,74,Alligator Deep,744,16.2
+2011,MK,OD,75,Tennessee Deep,751,
+2011,MK,OD,75,Tennessee Deep,752,
+2011,MK,OD,75,Tennessee Deep,753,
+2011,MK,OD,75,Tennessee Deep,754,
+2011,MK,OD,76,Sombrero Deep,761,
+2011,MK,OD,76,Sombrero Deep,762,
+2011,MK,OD,76,Sombrero Deep,763,
+2011,MK,OD,76,Sombrero Deep,764,
+2011,LK,OD,79,Western Sambo Deep,791,14.3
+2011,LK,OD,79,Western Sambo Deep,792,11.5
+2011,LK,OD,79,Western Sambo Deep,793,14.2
+2011,LK,OD,79,Western Sambo Deep,794,12.7
+2011,LK,OD,81,Sand Key Deep,811,16.4
+2011,LK,OD,81,Sand Key Deep,812,16.3
+2011,LK,OD,81,Sand Key Deep,813,25.5
+2011,LK,OD,81,Sand Key Deep,814,27.5
+2012,UK,P,32,Porter Patch,321,18.7
+2012,UK,P,32,Porter Patch,322,14.6
+2012,UK,P,32,Porter Patch,323,15.9
+2012,UK,P,32,Porter Patch,324,20
+2012,UK,P,33,Admiral,331,10.9
+2012,UK,P,33,Admiral,332,5.7
+2012,UK,P,33,Admiral,333,15.6
+2012,UK,P,33,Admiral,334,22.5
+2012,MK,P,34,West Turtle Shoal,341,11
+2012,MK,P,34,West Turtle Shoal,342,14.2
+2012,MK,P,34,West Turtle Shoal,343,11
+2012,MK,P,34,West Turtle Shoal,344,11.7
+2012,MK,P,35,Dustan Rocks,351,13.7
+2012,MK,P,35,Dustan Rocks,352,13
+2012,MK,P,35,Dustan Rocks,353,13
+2012,MK,P,35,Dustan Rocks,354,7
+2012,LK,P,36,West Washer Women,361,7.3
+2012,LK,P,36,West Washer Women,362,12.6
+2012,LK,P,36,West Washer Women,363,4.1
+2012,LK,P,36,West Washer Women,364,7.8
+2012,LK,P,38,Cliff Green,381,13.4
+2012,LK,P,38,Cliff Green,382,10
+2012,LK,P,38,Cliff Green,383,15.2
+2012,LK,P,38,Cliff Green,384,7.7
+2012,UK,OS,50,Carysfort Shallow,501,3.5
+2012,UK,OS,50,Carysfort Shallow,502,2.1
+2012,UK,OS,50,Carysfort Shallow,503,51.6
+2012,UK,OS,50,Carysfort Shallow,504,38.1
+2012,MK,OS,54,Alligator Shallow,541,26.3
+2012,MK,OS,54,Alligator Shallow,542,22.1
+2012,MK,OS,54,Alligator Shallow,543,30.8
+2012,MK,OS,54,Alligator Shallow,544,26.2
+2012,MK,OS,55,Tennessee Shallow,551,19.4
+2012,MK,OS,55,Tennessee Shallow,552,20.8
+2012,MK,OS,55,Tennessee Shallow,553,30.5
+2012,MK,OS,55,Tennessee Shallow,554,22.2
+2012,MK,OS,56,Sombrero Shallow,561,7.6
+2012,MK,OS,56,Sombrero Shallow,562,12
+2012,MK,OS,56,Sombrero Shallow,563,13.5
+2012,MK,OS,56,Sombrero Shallow,564,8.7
+2012,LK,OS,59,Western Sambo Shallow,591,9.3
+2012,LK,OS,59,Western Sambo Shallow,592,10.2
+2012,LK,OS,59,Western Sambo Shallow,593,5
+2012,LK,OS,59,Western Sambo Shallow,594,3.3
+2012,LK,OS,61,Sand Key Shallow,611,8.6
+2012,LK,OS,61,Sand Key Shallow,612,7.5
+2012,LK,OS,61,Sand Key Shallow,613,7.5
+2012,LK,OS,61,Sand Key Shallow,614,6.6
+2012,UK,OD,70,Carysfort Deep,701,19.3
+2012,UK,OD,70,Carysfort Deep,702,13.7
+2012,UK,OD,70,Carysfort Deep,703,23.4
+2012,UK,OD,70,Carysfort Deep,704,39.9
+2012,MK,OD,74,Alligator Deep,741,21.2
+2012,MK,OD,74,Alligator Deep,742,10.8
+2012,MK,OD,74,Alligator Deep,743,17.6
+2012,MK,OD,74,Alligator Deep,744,19.6
+2012,MK,OD,75,Tennessee Deep,751,11.6
+2012,MK,OD,75,Tennessee Deep,752,9.2
+2012,MK,OD,75,Tennessee Deep,753,17.8
+2012,MK,OD,75,Tennessee Deep,754,12.6
+2012,MK,OD,76,Sombrero Deep,761,13.1
+2012,MK,OD,76,Sombrero Deep,762,8.5
+2012,MK,OD,76,Sombrero Deep,763,13.3
+2012,MK,OD,76,Sombrero Deep,764,17.8
+2012,LK,OD,79,Western Sambo Deep,791,11.9
+2012,LK,OD,79,Western Sambo Deep,792,13.7
+2012,LK,OD,79,Western Sambo Deep,793,14
+2012,LK,OD,79,Western Sambo Deep,794,13.1
+2012,LK,OD,81,Sand Key Deep,811,16.1
+2012,LK,OD,81,Sand Key Deep,812,20.6
+2012,LK,OD,81,Sand Key Deep,813,23.1
+2012,LK,OD,81,Sand Key Deep,814,28.1
+2013,UK,P,32,Porter Patch,321,17
+2013,UK,P,32,Porter Patch,322,11.8
+2013,UK,P,32,Porter Patch,323,12.8
+2013,UK,P,32,Porter Patch,324,14.1
+2013,UK,P,33,Admiral,331,8.1
+2013,UK,P,33,Admiral,332,6.6
+2013,UK,P,33,Admiral,333,9.3
+2013,UK,P,33,Admiral,334,35.2
+2013,MK,P,34,West Turtle Shoal,341,9.8
+2013,MK,P,34,West Turtle Shoal,342,15.5
+2013,MK,P,34,West Turtle Shoal,343,11.4
+2013,MK,P,34,West Turtle Shoal,344,12.7
+2013,MK,P,35,Dustan Rocks,351,17.5
+2013,MK,P,35,Dustan Rocks,352,14
+2013,MK,P,35,Dustan Rocks,353,11.8
+2013,MK,P,35,Dustan Rocks,354,9.3
+2013,LK,P,36,West Washer Women,361,6.4
+2013,LK,P,36,West Washer Women,362,8.7
+2013,LK,P,36,West Washer Women,363,3.8
+2013,LK,P,36,West Washer Women,364,7.3
+2013,LK,P,38,Cliff Green,381,10.5
+2013,LK,P,38,Cliff Green,382,9.8
+2013,LK,P,38,Cliff Green,383,14.3
+2013,LK,P,38,Cliff Green,384,11
+2013,UK,OS,50,Carysfort Shallow,501,4.7
+2013,UK,OS,50,Carysfort Shallow,502,1.9
+2013,UK,OS,50,Carysfort Shallow,503,34.5
+2013,UK,OS,50,Carysfort Shallow,504,27.8
+2013,MK,OS,54,Alligator Shallow,541,23
+2013,MK,OS,54,Alligator Shallow,542,19.7
+2013,MK,OS,54,Alligator Shallow,543,25.4
+2013,MK,OS,54,Alligator Shallow,544,22.7
+2013,MK,OS,55,Tennessee Shallow,551,13.6
+2013,MK,OS,55,Tennessee Shallow,552,24.9
+2013,MK,OS,55,Tennessee Shallow,553,26.3
+2013,MK,OS,55,Tennessee Shallow,554,47.4
+2013,MK,OS,56,Sombrero Shallow,561,9
+2013,MK,OS,56,Sombrero Shallow,562,11.8
+2013,MK,OS,56,Sombrero Shallow,563,10.1
+2013,MK,OS,56,Sombrero Shallow,564,10.5
+2013,LK,OS,59,Western Sambo Shallow,591,11.3
+2013,LK,OS,59,Western Sambo Shallow,592,5.8
+2013,LK,OS,59,Western Sambo Shallow,593,5.5
+2013,LK,OS,59,Western Sambo Shallow,594,3.8
+2013,LK,OS,61,Sand Key Shallow,611,6.5
+2013,LK,OS,61,Sand Key Shallow,612,4.9
+2013,LK,OS,61,Sand Key Shallow,613,7.5
+2013,LK,OS,61,Sand Key Shallow,614,5.1
+2013,UK,OD,70,Carysfort Deep,701,14.4
+2013,UK,OD,70,Carysfort Deep,702,12.6
+2013,UK,OD,70,Carysfort Deep,703,19.3
+2013,UK,OD,70,Carysfort Deep,704,20.3
+2013,MK,OD,74,Alligator Deep,741,18.6
+2013,MK,OD,74,Alligator Deep,742,9.3
+2013,MK,OD,74,Alligator Deep,743,12.1
+2013,MK,OD,74,Alligator Deep,744,15.7
+2013,MK,OD,75,Tennessee Deep,751,13.8
+2013,MK,OD,75,Tennessee Deep,752,11.8
+2013,MK,OD,75,Tennessee Deep,753,13.7
+2013,MK,OD,75,Tennessee Deep,754,9.8
+2013,MK,OD,76,Sombrero Deep,761,11.3
+2013,MK,OD,76,Sombrero Deep,762,7.9
+2013,MK,OD,76,Sombrero Deep,763,8.2
+2013,MK,OD,76,Sombrero Deep,764,17.8
+2013,LK,OD,79,Western Sambo Deep,791,12.9
+2013,LK,OD,79,Western Sambo Deep,792,11.3
+2013,LK,OD,79,Western Sambo Deep,793,10.8
+2013,LK,OD,79,Western Sambo Deep,794,11
+2013,LK,OD,81,Sand Key Deep,811,20.6
+2013,LK,OD,81,Sand Key Deep,812,16.4
+2013,LK,OD,81,Sand Key Deep,813,18.1
+2013,LK,OD,81,Sand Key Deep,814,30.1
+2014,UK,P,32,Porter Patch,321,15.9
+2014,UK,P,32,Porter Patch,322,13.3
+2014,UK,P,32,Porter Patch,323,17.1
+2014,UK,P,32,Porter Patch,324,17.2
+2014,UK,P,33,Admiral,331,23.7
+2014,UK,P,33,Admiral,332,12.1
+2014,UK,P,33,Admiral,333,23.8
+2014,UK,P,33,Admiral,334,41.2
+2014,MK,P,34,West Turtle Shoal,341,9.2
+2014,MK,P,34,West Turtle Shoal,342,20.1
+2014,MK,P,34,West Turtle Shoal,343,16
+2014,MK,P,34,West Turtle Shoal,344,17.3
+2014,MK,P,35,Dustan Rocks,351,15.2
+2014,MK,P,35,Dustan Rocks,352,15.5
+2014,MK,P,35,Dustan Rocks,353,17.3
+2014,MK,P,35,Dustan Rocks,354,20
+2014,LK,P,36,West Washer Women,361,6.1
+2014,LK,P,36,West Washer Women,362,7.9
+2014,LK,P,36,West Washer Women,363,4.8
+2014,LK,P,36,West Washer Women,364,6.4
+2014,LK,P,38,Cliff Green,381,10.8
+2014,LK,P,38,Cliff Green,382,9.2
+2014,LK,P,38,Cliff Green,383,11.6
+2014,LK,P,38,Cliff Green,384,7.3
+2014,UK,OS,50,Carysfort Shallow,501,3.3
+2014,UK,OS,50,Carysfort Shallow,502,1.8
+2014,UK,OS,50,Carysfort Shallow,503,33.1
+2014,UK,OS,50,Carysfort Shallow,504,31.4
+2014,UK,OS,52,Molasses Shallow,521,12.7
+2014,UK,OS,52,Molasses Shallow,522,20.3
+2014,UK,OS,52,Molasses Shallow,523,20.5
+2014,UK,OS,52,Molasses Shallow,524,14.3
+2014,MK,OS,54,Alligator Shallow,541,23.9
+2014,MK,OS,54,Alligator Shallow,542,21.9
+2014,MK,OS,54,Alligator Shallow,543,26.9
+2014,MK,OS,54,Alligator Shallow,544,23.2
+2014,MK,OS,55,Tennessee Shallow,551,21
+2014,MK,OS,55,Tennessee Shallow,552,27
+2014,MK,OS,55,Tennessee Shallow,553,28.2
+2014,MK,OS,55,Tennessee Shallow,554,39.3
+2014,MK,OS,56,Sombrero Shallow,561,8.3
+2014,MK,OS,56,Sombrero Shallow,562,14.1
+2014,MK,OS,56,Sombrero Shallow,563,8.4
+2014,MK,OS,56,Sombrero Shallow,564,10
+2014,LK,OS,59,Western Sambo Shallow,591,8.4
+2014,LK,OS,59,Western Sambo Shallow,592,6.4
+2014,LK,OS,59,Western Sambo Shallow,593,3.8
+2014,LK,OS,59,Western Sambo Shallow,594,3.2
+2014,LK,OS,61,Sand Key Shallow,611,5
+2014,LK,OS,61,Sand Key Shallow,612,4.9
+2014,LK,OS,61,Sand Key Shallow,613,6.3
+2014,LK,OS,61,Sand Key Shallow,614,5.3
+2014,UK,OD,70,Carysfort Deep,701,13
+2014,UK,OD,70,Carysfort Deep,702,9.4
+2014,UK,OD,70,Carysfort Deep,703,12.4
+2014,UK,OD,70,Carysfort Deep,704,18.4
+2014,UK,OD,72,Molasses Deep,721,18.6
+2014,UK,OD,72,Molasses Deep,722,15.4
+2014,UK,OD,72,Molasses Deep,723,21.9
+2014,UK,OD,72,Molasses Deep,724,18.4
+2014,MK,OD,74,Alligator Deep,741,14.1
+2014,MK,OD,74,Alligator Deep,742,12.3
+2014,MK,OD,74,Alligator Deep,743,15.1
+2014,MK,OD,74,Alligator Deep,744,10.2
+2014,MK,OD,75,Tennessee Deep,751,15.2
+2014,MK,OD,75,Tennessee Deep,752,12.9
+2014,MK,OD,75,Tennessee Deep,753,17.1
+2014,MK,OD,75,Tennessee Deep,754,12.6
+2014,MK,OD,76,Sombrero Deep,761,11.7
+2014,MK,OD,76,Sombrero Deep,762,10.9
+2014,MK,OD,76,Sombrero Deep,763,15.6
+2014,MK,OD,76,Sombrero Deep,764,16.1
+2014,LK,OD,79,Western Sambo Deep,791,14.5
+2014,LK,OD,79,Western Sambo Deep,792,19.9
+2014,LK,OD,79,Western Sambo Deep,793,14.2
+2014,LK,OD,79,Western Sambo Deep,794,12
+2014,LK,OD,81,Sand Key Deep,811,15.2
+2014,LK,OD,81,Sand Key Deep,812,22.1
+2014,LK,OD,81,Sand Key Deep,813,26.7
+2014,LK,OD,81,Sand Key Deep,814,25.5
+2015,LK,P,26,Red Dun Reef,261,15.7
+2015,LK,P,26,Red Dun Reef,262,15.4
+2015,LK,P,26,Red Dun Reef,263,16.9
+2015,LK,P,26,Red Dun Reef,264,10.1
+2015,UK,P,32,Porter Patch,321,18.4
+2015,UK,P,32,Porter Patch,322,15.3
+2015,UK,P,32,Porter Patch,323,16.9
+2015,UK,P,32,Porter Patch,324,14.3
+2015,UK,P,33,Admiral,331,19.3
+2015,UK,P,33,Admiral,332,11.3
+2015,UK,P,33,Admiral,333,34.5
+2015,UK,P,33,Admiral,334,32.3
+2015,MK,P,34,West Turtle Shoal,341,7.7
+2015,MK,P,34,West Turtle Shoal,342,16.6
+2015,MK,P,34,West Turtle Shoal,343,14.7
+2015,MK,P,34,West Turtle Shoal,344,20.9
+2015,MK,P,35,Dustan Rocks,351,17.2
+2015,MK,P,35,Dustan Rocks,352,14.9
+2015,MK,P,35,Dustan Rocks,353,16.6
+2015,MK,P,35,Dustan Rocks,354,22.7
+2015,LK,P,36,West Washer Women,361,5.5
+2015,LK,P,36,West Washer Women,362,11.5
+2015,LK,P,36,West Washer Women,363,4.6
+2015,LK,P,36,West Washer Women,364,6.6
+2015,LK,P,38,Cliff Green,381,10.5
+2015,LK,P,38,Cliff Green,382,9.1
+2015,LK,P,38,Cliff Green,383,9.8
+2015,LK,P,38,Cliff Green,384,8
+2015,UK,OS,50,Carysfort Shallow,501,4.9
+2015,UK,OS,50,Carysfort Shallow,502,2
+2015,UK,OS,50,Carysfort Shallow,503,37.9
+2015,UK,OS,50,Carysfort Shallow,504,31.4
+2015,UK,OS,52,Molasses Shallow,521,13.8
+2015,UK,OS,52,Molasses Shallow,522,20.8
+2015,UK,OS,52,Molasses Shallow,523,20.5
+2015,UK,OS,52,Molasses Shallow,524,18.3
+2015,MK,OS,54,Alligator Shallow,541,22.7
+2015,MK,OS,54,Alligator Shallow,542,23.1
+2015,MK,OS,54,Alligator Shallow,543,27.8
+2015,MK,OS,54,Alligator Shallow,544,22.3
+2015,MK,OS,55,Tennessee Shallow,551,23
+2015,MK,OS,55,Tennessee Shallow,552,28.1
+2015,MK,OS,55,Tennessee Shallow,553,20.5
+2015,MK,OS,55,Tennessee Shallow,554,36.1
+2015,MK,OS,56,Sombrero Shallow,561,6.6
+2015,MK,OS,56,Sombrero Shallow,562,9.5
+2015,MK,OS,56,Sombrero Shallow,563,7.1
+2015,MK,OS,56,Sombrero Shallow,564,8.7
+2015,LK,OS,59,Western Sambo Shallow,591,8.1
+2015,LK,OS,59,Western Sambo Shallow,592,6.6
+2015,LK,OS,59,Western Sambo Shallow,593,4.1
+2015,LK,OS,59,Western Sambo Shallow,594,3.7
+2015,LK,OS,61,Sand Key Shallow,611,5.3
+2015,LK,OS,61,Sand Key Shallow,612,5
+2015,LK,OS,61,Sand Key Shallow,613,7.9
+2015,LK,OS,61,Sand Key Shallow,614,6.4
+2015,UK,OD,70,Carysfort Deep,701,13.4
+2015,UK,OD,70,Carysfort Deep,702,11.7
+2015,UK,OD,70,Carysfort Deep,703,17.8
+2015,UK,OD,70,Carysfort Deep,704,21.6
+2015,UK,OD,72,Molasses Deep,721,23.4
+2015,UK,OD,72,Molasses Deep,722,18.7
+2015,UK,OD,72,Molasses Deep,723,17.1
+2015,UK,OD,72,Molasses Deep,724,28.9
+2015,MK,OD,74,Alligator Deep,741,18.3
+2015,MK,OD,74,Alligator Deep,742,12.9
+2015,MK,OD,74,Alligator Deep,743,17.5
+2015,MK,OD,74,Alligator Deep,744,19.1
+2015,MK,OD,75,Tennessee Deep,751,12.8
+2015,MK,OD,75,Tennessee Deep,752,9.2
+2015,MK,OD,75,Tennessee Deep,753,18.5
+2015,MK,OD,75,Tennessee Deep,754,8.6
+2015,MK,OD,76,Sombrero Deep,761,12.1
+2015,MK,OD,76,Sombrero Deep,762,9.9
+2015,MK,OD,76,Sombrero Deep,763,18
+2015,MK,OD,76,Sombrero Deep,764,14.3
+2015,LK,OD,79,Western Sambo Deep,791,17.8
+2015,LK,OD,79,Western Sambo Deep,792,16.7
+2015,LK,OD,79,Western Sambo Deep,793,11.6
+2015,LK,OD,79,Western Sambo Deep,794,14.4
+2015,LK,OD,81,Sand Key Deep,811,15.2
+2015,LK,OD,81,Sand Key Deep,812,19.8
+2015,LK,OD,81,Sand Key Deep,813,27.3
+2015,LK,OD,81,Sand Key Deep,814,24.7
+2016,LK,P,26,Red Dun Reef,261,14.4
+2016,LK,P,26,Red Dun Reef,262,9.6
+2016,LK,P,26,Red Dun Reef,263,17.4
+2016,LK,P,26,Red Dun Reef,264,9.7
+2016,UK,P,32,Porter Patch,321,25.4
+2016,UK,P,32,Porter Patch,322,13.3
+2016,UK,P,32,Porter Patch,323,19.7
+2016,UK,P,32,Porter Patch,324,18.2
+2016,UK,P,33,Admiral,331,24.5
+2016,UK,P,33,Admiral,332,15.5
+2016,UK,P,33,Admiral,333,30.1
+2016,UK,P,33,Admiral,334,41.9
+2016,MK,P,34,West Turtle Shoal,341,6.6
+2016,MK,P,34,West Turtle Shoal,342,16
+2016,MK,P,34,West Turtle Shoal,343,11.7
+2016,MK,P,34,West Turtle Shoal,344,18
+2016,MK,P,35,Dustan Rocks,351,14.8
+2016,MK,P,35,Dustan Rocks,352,15.4
+2016,MK,P,35,Dustan Rocks,353,16.4
+2016,MK,P,35,Dustan Rocks,354,15.3
+2016,LK,P,36,West Washer Women,361,6.1
+2016,LK,P,36,West Washer Women,362,8.5
+2016,LK,P,36,West Washer Women,363,4.7
+2016,LK,P,36,West Washer Women,364,5.2
+2016,LK,P,38,Cliff Green,381,9.5
+2016,LK,P,38,Cliff Green,382,8.7
+2016,LK,P,38,Cliff Green,383,9.8
+2016,LK,P,38,Cliff Green,384,7.4
+2016,UK,OS,50,Carysfort Shallow,501,4.4
+2016,UK,OS,50,Carysfort Shallow,502,2.4
+2016,UK,OS,50,Carysfort Shallow,503,31
+2016,UK,OS,50,Carysfort Shallow,504,29.5
+2016,UK,OS,52,Molasses Shallow,521,17.5
+2016,UK,OS,52,Molasses Shallow,522,17.1
+2016,UK,OS,52,Molasses Shallow,523,23.7
+2016,UK,OS,52,Molasses Shallow,524,17.7
+2016,MK,OS,54,Alligator Shallow,541,18.1
+2016,MK,OS,54,Alligator Shallow,542,17.3
+2016,MK,OS,54,Alligator Shallow,543,28.3
+2016,MK,OS,54,Alligator Shallow,544,22.3
+2016,MK,OS,55,Tennessee Shallow,551,23.1
+2016,MK,OS,55,Tennessee Shallow,552,25
+2016,MK,OS,55,Tennessee Shallow,553,22
+2016,MK,OS,55,Tennessee Shallow,554,36.3
+2016,MK,OS,56,Sombrero Shallow,561,6.7
+2016,MK,OS,56,Sombrero Shallow,562,9.2
+2016,MK,OS,56,Sombrero Shallow,563,8.3
+2016,MK,OS,56,Sombrero Shallow,564,7.9
+2016,LK,OS,59,Western Sambo Shallow,591,7.9
+2016,LK,OS,59,Western Sambo Shallow,592,5.8
+2016,LK,OS,59,Western Sambo Shallow,593,3.8
+2016,LK,OS,59,Western Sambo Shallow,594,3.6
+2016,LK,OS,61,Sand Key Shallow,611,4
+2016,LK,OS,61,Sand Key Shallow,612,4.6
+2016,LK,OS,61,Sand Key Shallow,613,7.8
+2016,LK,OS,61,Sand Key Shallow,614,4.3
+2016,UK,OD,70,Carysfort Deep,701,16.4
+2016,UK,OD,70,Carysfort Deep,702,9.3
+2016,UK,OD,70,Carysfort Deep,703,14.4
+2016,UK,OD,70,Carysfort Deep,704,16.3
+2016,UK,OD,72,Molasses Deep,721,22.5
+2016,UK,OD,72,Molasses Deep,722,17.2
+2016,UK,OD,72,Molasses Deep,723,18.4
+2016,UK,OD,72,Molasses Deep,724,17.3
+2016,MK,OD,74,Alligator Deep,741,17.2
+2016,MK,OD,74,Alligator Deep,742,12.1
+2016,MK,OD,74,Alligator Deep,743,14.2
+2016,MK,OD,74,Alligator Deep,744,19.4
+2016,MK,OD,75,Tennessee Deep,751,12.4
+2016,MK,OD,75,Tennessee Deep,752,15.1
+2016,MK,OD,75,Tennessee Deep,753,18.1
+2016,MK,OD,75,Tennessee Deep,754,9.1
+2016,MK,OD,76,Sombrero Deep,761,9.5
+2016,MK,OD,76,Sombrero Deep,762,8.1
+2016,MK,OD,76,Sombrero Deep,763,16.8
+2016,MK,OD,76,Sombrero Deep,764,15.4
+2016,LK,OD,79,Western Sambo Deep,791,16.7
+2016,LK,OD,79,Western Sambo Deep,792,13.8
+2016,LK,OD,79,Western Sambo Deep,793,10.2
+2016,LK,OD,79,Western Sambo Deep,794,12.4
+2016,LK,OD,81,Sand Key Deep,811,14.3
+2016,LK,OD,81,Sand Key Deep,812,12.9
+2016,LK,OD,81,Sand Key Deep,813,19.4
+2016,LK,OD,81,Sand Key Deep,814,25.1
+2017,LK,P,26,Red Dun Reef,261,14.6
+2017,LK,P,26,Red Dun Reef,262,12.7
+2017,LK,P,26,Red Dun Reef,263,16.9
+2017,LK,P,26,Red Dun Reef,264,10.5
+2017,UK,P,32,Porter Patch,321,18.9
+2017,UK,P,32,Porter Patch,322,16.2
+2017,UK,P,32,Porter Patch,323,19.6
+2017,UK,P,32,Porter Patch,324,15.6
+2017,UK,P,33,Admiral,331,23.7
+2017,UK,P,33,Admiral,332,19.6
+2017,UK,P,33,Admiral,333,36.1
+2017,UK,P,33,Admiral,334,48.9
+2017,MK,P,34,West Turtle Shoal,341,7.6
+2017,MK,P,34,West Turtle Shoal,342,14.3
+2017,MK,P,34,West Turtle Shoal,343,15.8
+2017,MK,P,34,West Turtle Shoal,344,17.4
+2017,MK,P,35,Dustan Rocks,351,13.6
+2017,MK,P,35,Dustan Rocks,352,15.8
+2017,MK,P,35,Dustan Rocks,353,14.6
+2017,MK,P,35,Dustan Rocks,354,16.1
+2017,LK,P,36,West Washer Women,361,5.1
+2017,LK,P,36,West Washer Women,362,7.5
+2017,LK,P,36,West Washer Women,363,4.7
+2017,LK,P,36,West Washer Women,364,6.3
+2017,LK,P,38,Cliff Green,381,10.1
+2017,LK,P,38,Cliff Green,382,8.4
+2017,LK,P,38,Cliff Green,383,11.8
+2017,LK,P,38,Cliff Green,384,6.8
+2017,UK,OS,50,Carysfort Shallow,501,6.1
+2017,UK,OS,50,Carysfort Shallow,502,2.9
+2017,UK,OS,50,Carysfort Shallow,503,31.9
+2017,UK,OS,50,Carysfort Shallow,504,38.7
+2017,UK,OS,52,Molasses Shallow,521,15.9
+2017,UK,OS,52,Molasses Shallow,522,14.7
+2017,UK,OS,52,Molasses Shallow,523,30
+2017,UK,OS,52,Molasses Shallow,524,16.3
+2017,MK,OS,54,Alligator Shallow,543,27.4
+2017,MK,OS,54,Alligator Shallow,544,19.5
+2017,MK,OS,55,Tennessee Shallow,551,17.3
+2017,MK,OS,55,Tennessee Shallow,552,26.7
+2017,MK,OS,55,Tennessee Shallow,553,30.1
+2017,MK,OS,55,Tennessee Shallow,554,36.5
+2017,MK,OS,56,Sombrero Shallow,561,7.8
+2017,MK,OS,56,Sombrero Shallow,562,8.9
+2017,MK,OS,56,Sombrero Shallow,563,7.1
+2017,MK,OS,56,Sombrero Shallow,564,8.4
+2017,LK,OS,59,Western Sambo Shallow,591,8
+2017,LK,OS,59,Western Sambo Shallow,592,5.4
+2017,LK,OS,59,Western Sambo Shallow,593,3
+2017,LK,OS,59,Western Sambo Shallow,594,3.2
+2017,LK,OS,61,Sand Key Shallow,611,8.3
+2017,LK,OS,61,Sand Key Shallow,612,6.3
+2017,LK,OS,61,Sand Key Shallow,613,9.2
+2017,LK,OS,61,Sand Key Shallow,614,5.5
+2017,UK,OD,70,Carysfort Deep,701,13.6
+2017,UK,OD,70,Carysfort Deep,702,11.3
+2017,UK,OD,70,Carysfort Deep,703,16.4
+2017,UK,OD,70,Carysfort Deep,704,14.1
+2017,UK,OD,72,Molasses Deep,721,18.8
+2017,UK,OD,72,Molasses Deep,722,15.3
+2017,UK,OD,72,Molasses Deep,723,22.8
+2017,UK,OD,72,Molasses Deep,724,21
+2017,MK,OD,74,Alligator Deep,743,15.1
+2017,MK,OD,75,Tennessee Deep,751,11.8
+2017,MK,OD,75,Tennessee Deep,752,14
+2017,MK,OD,75,Tennessee Deep,753,20.1
+2017,MK,OD,75,Tennessee Deep,754,9.3
+2017,MK,OD,76,Sombrero Deep,761,8.8
+2017,MK,OD,76,Sombrero Deep,762,8
+2017,MK,OD,76,Sombrero Deep,763,17
+2017,MK,OD,76,Sombrero Deep,764,14.8
+2017,LK,OD,79,Western Sambo Deep,791,13.1
+2017,LK,OD,79,Western Sambo Deep,792,15.9
+2017,LK,OD,79,Western Sambo Deep,793,15.6
+2017,LK,OD,79,Western Sambo Deep,794,9.5
+2017,LK,OD,81,Sand Key Deep,811,17.9
+2017,LK,OD,81,Sand Key Deep,812,16.6
+2017,LK,OD,81,Sand Key Deep,813,28.8
+2017,LK,OD,81,Sand Key Deep,814,60.1
+2018,UK,P,32,Porter Patch,321,16.1
+2018,UK,P,32,Porter Patch,322,11.7
+2018,UK,P,32,Porter Patch,323,15.2
+2018,UK,P,32,Porter Patch,324,14.2
+2018,UK,P,33,Admiral,331,29.4
+2018,UK,P,33,Admiral,332,23.8
+2018,UK,P,33,Admiral,333,39.5
+2018,UK,P,33,Admiral,334,36.7
+2018,MK,P,34,West Turtle Shoal,341,6.8
+2018,MK,P,34,West Turtle Shoal,342,16.5
+2018,MK,P,34,West Turtle Shoal,343,14.3
+2018,MK,P,34,West Turtle Shoal,344,8
+2018,MK,P,35,Dustan Rocks,351,15
+2018,MK,P,35,Dustan Rocks,352,16.4
+2018,MK,P,35,Dustan Rocks,353,14.3
+2018,MK,P,35,Dustan Rocks,354,13.6
+2018,LK,P,36,West Washer Women,361,3.7
+2018,LK,P,36,West Washer Women,362,6.5
+2018,LK,P,36,West Washer Women,363,4.7
+2018,LK,P,36,West Washer Women,364,3.4
+2018,LK,P,38,Cliff Green,381,8.7
+2018,LK,P,38,Cliff Green,382,8
+2018,LK,P,38,Cliff Green,383,8.7
+2018,LK,P,38,Cliff Green,384,4.7
+2018,UK,OS,50,Carysfort Shallow,501,4.6
+2018,UK,OS,50,Carysfort Shallow,502,3.3
+2018,UK,OS,50,Carysfort Shallow,503,41.8
+2018,UK,OS,50,Carysfort Shallow,504,38.5
+2018,UK,OS,52,Molasses Shallow,521,15.7
+2018,UK,OS,52,Molasses Shallow,522,13
+2018,UK,OS,52,Molasses Shallow,523,18.1
+2018,UK,OS,52,Molasses Shallow,524,15.4
+2018,MK,OS,54,Alligator Shallow,541,6.1
+2018,MK,OS,54,Alligator Shallow,542,8.6
+2018,MK,OS,54,Alligator Shallow,543,17.5
+2018,MK,OS,54,Alligator Shallow,544,12.2
+2018,MK,OS,55,Tennessee Shallow,551,8.9
+2018,MK,OS,55,Tennessee Shallow,552,8.6
+2018,MK,OS,55,Tennessee Shallow,553,9.5
+2018,MK,OS,55,Tennessee Shallow,554,16.4
+2018,MK,OS,56,Sombrero Shallow,561,5.6
+2018,MK,OS,56,Sombrero Shallow,562,8.6
+2018,MK,OS,56,Sombrero Shallow,563,5.6
+2018,MK,OS,56,Sombrero Shallow,564,7.1
+2018,LK,OS,59,Western Sambo Shallow,591,8.8
+2018,LK,OS,59,Western Sambo Shallow,592,4.7
+2018,LK,OS,59,Western Sambo Shallow,593,3.1
+2018,LK,OS,59,Western Sambo Shallow,594,3
+2018,LK,OS,61,Sand Key Shallow,611,10.2
+2018,LK,OS,61,Sand Key Shallow,612,4.8
+2018,LK,OS,61,Sand Key Shallow,613,9.3
+2018,LK,OS,61,Sand Key Shallow,614,4.1
+2018,UK,OD,70,Carysfort Deep,701,12.3
+2018,UK,OD,70,Carysfort Deep,702,15.1
+2018,UK,OD,70,Carysfort Deep,703,13.3
+2018,UK,OD,70,Carysfort Deep,704,13.7
+2018,UK,OD,72,Molasses Deep,721,18
+2018,UK,OD,72,Molasses Deep,722,12.9
+2018,UK,OD,72,Molasses Deep,723,20.6
+2018,UK,OD,72,Molasses Deep,724,21.6
+2018,MK,OD,74,Alligator Deep,741,10.5
+2018,MK,OD,74,Alligator Deep,742,8.8
+2018,MK,OD,74,Alligator Deep,743,9.7
+2018,MK,OD,74,Alligator Deep,744,17.7
+2018,MK,OD,75,Tennessee Deep,751,5.9
+2018,MK,OD,75,Tennessee Deep,752,6.5
+2018,MK,OD,75,Tennessee Deep,753,9.4
+2018,MK,OD,75,Tennessee Deep,754,4.9
+2018,MK,OD,76,Sombrero Deep,761,6
+2018,MK,OD,76,Sombrero Deep,762,3.7
+2018,MK,OD,76,Sombrero Deep,763,6.7
+2018,MK,OD,76,Sombrero Deep,764,9.1
+2018,LK,OD,79,Western Sambo Deep,791,13.9
+2018,LK,OD,79,Western Sambo Deep,792,13.1
+2018,LK,OD,79,Western Sambo Deep,793,11
+2018,LK,OD,79,Western Sambo Deep,794,7.9
+2018,LK,OD,81,Sand Key Deep,811,23.1
+2018,LK,OD,81,Sand Key Deep,812,18
+2018,LK,OD,81,Sand Key Deep,813,27.6
+2018,LK,OD,81,Sand Key Deep,814,37.7
+2019,UK,P,32,Porter Patch,321,16.1
+2019,UK,P,32,Porter Patch,322,14.2
+2019,UK,P,32,Porter Patch,323,12.2
+2019,UK,P,32,Porter Patch,324,12.6
+2019,UK,P,33,Admiral,331,30.3
+2019,UK,P,33,Admiral,332,24.7
+2019,UK,P,33,Admiral,333,36.1
+2019,UK,P,33,Admiral,334,44.4
+2019,MK,P,34,West Turtle Shoal,341,6.7
+2019,MK,P,34,West Turtle Shoal,342,15.1
+2019,MK,P,34,West Turtle Shoal,343,21.5
+2019,MK,P,34,West Turtle Shoal,344,12.4
+2019,MK,P,35,Dustan Rocks,351,13.7
+2019,MK,P,35,Dustan Rocks,352,20
+2019,MK,P,35,Dustan Rocks,353,15.5
+2019,MK,P,35,Dustan Rocks,354,15.1
+2019,LK,P,36,West Washer Women,361,5
+2019,LK,P,36,West Washer Women,362,6.4
+2019,LK,P,36,West Washer Women,363,4.4
+2019,LK,P,36,West Washer Women,364,6.3
+2019,LK,P,38,Cliff Green,381,9.7
+2019,LK,P,38,Cliff Green,382,7.7
+2019,LK,P,38,Cliff Green,383,11
+2019,LK,P,38,Cliff Green,384,4.4
+2019,UK,OS,50,Carysfort Shallow,501,6.4
+2019,UK,OS,50,Carysfort Shallow,502,4.3
+2019,UK,OS,50,Carysfort Shallow,503,41.2
+2019,UK,OS,50,Carysfort Shallow,504,30.4
+2019,UK,OS,52,Molasses Shallow,521,17.7
+2019,UK,OS,52,Molasses Shallow,522,21.4
+2019,UK,OS,52,Molasses Shallow,523,24.1
+2019,UK,OS,52,Molasses Shallow,524,23.2
+2019,MK,OS,54,Alligator Shallow,541,26.8
+2019,MK,OS,54,Alligator Shallow,542,25.7
+2019,MK,OS,54,Alligator Shallow,543,40.9
+2019,MK,OS,54,Alligator Shallow,544,17.5
+2019,MK,OS,55,Tennessee Shallow,551,24.8
+2019,MK,OS,55,Tennessee Shallow,552,34.2
+2019,MK,OS,55,Tennessee Shallow,553,19.6
+2019,MK,OS,55,Tennessee Shallow,554,26
+2019,MK,OS,56,Sombrero Shallow,561,12.5
+2019,MK,OS,56,Sombrero Shallow,562,12.5
+2019,MK,OS,56,Sombrero Shallow,563,12.2
+2019,MK,OS,56,Sombrero Shallow,564,8.7
+2019,LK,OS,59,Western Sambo Shallow,591,10.3
+2019,LK,OS,59,Western Sambo Shallow,592,5.9
+2019,LK,OS,59,Western Sambo Shallow,593,3
+2019,LK,OS,59,Western Sambo Shallow,594,2.7
+2019,LK,OS,61,Sand Key Shallow,611,14.6
+2019,LK,OS,61,Sand Key Shallow,612,6.7
+2019,LK,OS,61,Sand Key Shallow,613,11.4
+2019,LK,OS,61,Sand Key Shallow,614,7.2
+2019,UK,OD,70,Carysfort Deep,701,13.6
+2019,UK,OD,70,Carysfort Deep,702,17.2
+2019,UK,OD,70,Carysfort Deep,703,19.8
+2019,UK,OD,70,Carysfort Deep,704,12.9
+2019,UK,OD,72,Molasses Deep,721,26.4
+2019,UK,OD,72,Molasses Deep,722,21
+2019,UK,OD,72,Molasses Deep,723,23
+2019,UK,OD,72,Molasses Deep,724,23.6
+2019,MK,OD,74,Alligator Deep,741,18.4
+2019,MK,OD,74,Alligator Deep,742,6.1
+2019,MK,OD,74,Alligator Deep,743,18.5
+2019,MK,OD,74,Alligator Deep,744,27.4
+2019,MK,OD,75,Tennessee Deep,751,6.4
+2019,MK,OD,75,Tennessee Deep,752,7.8
+2019,MK,OD,75,Tennessee Deep,753,9.6
+2019,MK,OD,75,Tennessee Deep,754,5.3
+2019,MK,OD,76,Sombrero Deep,761,14.4
+2019,MK,OD,76,Sombrero Deep,762,9.2
+2019,MK,OD,76,Sombrero Deep,763,13.6
+2019,MK,OD,76,Sombrero Deep,764,12.2
+2019,LK,OD,79,Western Sambo Deep,791,12.4
+2019,LK,OD,79,Western Sambo Deep,792,16.2
+2019,LK,OD,79,Western Sambo Deep,793,22.5
+2019,LK,OD,79,Western Sambo Deep,794,20.7
+2019,LK,OD,81,Sand Key Deep,811,25.4
+2019,LK,OD,81,Sand Key Deep,812,29.8
+2019,LK,OD,81,Sand Key Deep,813,58.8
+2019,LK,OD,81,Sand Key Deep,814,46.5
+2020,UK,P,32,Porter Patch,321,16.5
+2020,UK,P,32,Porter Patch,322,16.1
+2020,UK,P,32,Porter Patch,323,16.3
+2020,UK,P,32,Porter Patch,324,14.1
+2020,UK,P,33,Admiral,331,24
+2020,UK,P,33,Admiral,332,22.9
+2020,UK,P,33,Admiral,333,35.4
+2020,UK,P,33,Admiral,334,53.1
+2020,MK,P,34,West Turtle Shoal,341,7.2
+2020,MK,P,34,West Turtle Shoal,342,15.6
+2020,MK,P,34,West Turtle Shoal,343,22.7
+2020,MK,P,34,West Turtle Shoal,344,11.8
+2020,MK,P,35,Dustan Rocks,351,14.2
+2020,MK,P,35,Dustan Rocks,352,15
+2020,MK,P,35,Dustan Rocks,353,17.7
+2020,MK,P,35,Dustan Rocks,354,13.3
+2020,LK,P,36,West Washer Women,361,5.9
+2020,LK,P,36,West Washer Women,362,7.6
+2020,LK,P,36,West Washer Women,363,3.1
+2020,LK,P,36,West Washer Women,364,6
+2020,LK,P,38,Cliff Green,381,8.3
+2020,LK,P,38,Cliff Green,382,8.2
+2020,LK,P,38,Cliff Green,383,8.4
+2020,LK,P,38,Cliff Green,384,6.1
+2020,UK,OS,50,Carysfort Shallow,501,10.8
+2020,UK,OS,50,Carysfort Shallow,502,7.1
+2020,UK,OS,50,Carysfort Shallow,503,41.9
+2020,UK,OS,50,Carysfort Shallow,504,30.6
+2020,UK,OS,52,Molasses Shallow,521,31.5
+2020,UK,OS,52,Molasses Shallow,522,35.1
+2020,UK,OS,52,Molasses Shallow,523,43.6
+2020,UK,OS,52,Molasses Shallow,524,36.1
+2020,MK,OS,54,Alligator Shallow,541,37.7
+2020,MK,OS,54,Alligator Shallow,542,32.4
+2020,MK,OS,54,Alligator Shallow,543,48.5
+2020,MK,OS,54,Alligator Shallow,544,39.4
+2020,MK,OS,55,Tennessee Shallow,551,27.6
+2020,MK,OS,55,Tennessee Shallow,552,36.2
+2020,MK,OS,55,Tennessee Shallow,553,33.8
+2020,MK,OS,55,Tennessee Shallow,554,44.3
+2020,MK,OS,56,Sombrero Shallow,561,8.1
+2020,MK,OS,56,Sombrero Shallow,562,9.4
+2020,MK,OS,56,Sombrero Shallow,563,11
+2020,MK,OS,56,Sombrero Shallow,564,8.2
+2020,LK,OS,59,Western Sambo Shallow,591,19.9
+2020,LK,OS,59,Western Sambo Shallow,592,5.6
+2020,LK,OS,59,Western Sambo Shallow,593,3.4
+2020,LK,OS,59,Western Sambo Shallow,594,3.1
+2020,LK,OS,61,Sand Key Shallow,611,17.7
+2020,LK,OS,61,Sand Key Shallow,612,7.7
+2020,LK,OS,61,Sand Key Shallow,613,13.8
+2020,LK,OS,61,Sand Key Shallow,614,8.8
+2020,UK,OD,70,Carysfort Deep,701,12.4
+2020,UK,OD,70,Carysfort Deep,702,17.3
+2020,UK,OD,70,Carysfort Deep,703,15
+2020,UK,OD,70,Carysfort Deep,704,11.4
+2020,UK,OD,72,Molasses Deep,721,28.8
+2020,UK,OD,72,Molasses Deep,722,26.3
+2020,UK,OD,72,Molasses Deep,723,23.3
+2020,UK,OD,72,Molasses Deep,724,40.8
+2020,MK,OD,74,Alligator Deep,741,27
+2020,MK,OD,74,Alligator Deep,742,15.7
+2020,MK,OD,74,Alligator Deep,743,44.4
+2020,MK,OD,74,Alligator Deep,744,26.4
+2020,MK,OD,75,Tennessee Deep,751,6.2
+2020,MK,OD,75,Tennessee Deep,752,5.9
+2020,MK,OD,75,Tennessee Deep,753,15.3
+2020,MK,OD,75,Tennessee Deep,754,4.4
+2020,MK,OD,76,Sombrero Deep,761,10.3
+2020,MK,OD,76,Sombrero Deep,762,5.9
+2020,MK,OD,76,Sombrero Deep,763,9.6
+2020,MK,OD,76,Sombrero Deep,764,8.4
+2020,LK,OD,79,Western Sambo Deep,791,13
+2020,LK,OD,79,Western Sambo Deep,792,17.7
+2020,LK,OD,79,Western Sambo Deep,793,20.9
+2020,LK,OD,79,Western Sambo Deep,794,17.8
+2020,LK,OD,81,Sand Key Deep,811,32.3
+2020,LK,OD,81,Sand Key Deep,812,29.8
+2020,LK,OD,81,Sand Key Deep,813,47.5
+2020,LK,OD,81,Sand Key Deep,814,42.6
+2021,UK,P,32,Porter Patch,321,15.2
+2021,UK,P,32,Porter Patch,322,13.9
+2021,UK,P,32,Porter Patch,323,12.3
+2021,UK,P,32,Porter Patch,324,11.4
+2021,UK,P,33,Admiral,331,22.2
+2021,UK,P,33,Admiral,332,26.9
+2021,UK,P,33,Admiral,333,40.3
+2021,UK,P,33,Admiral,334,51.1
+2021,MK,P,34,West Turtle Shoal,341,6.8
+2021,MK,P,34,West Turtle Shoal,342,12.4
+2021,MK,P,34,West Turtle Shoal,343,14.4
+2021,MK,P,34,West Turtle Shoal,344,11.4
+2021,MK,P,35,Dustan Rocks,351,16.6
+2021,MK,P,35,Dustan Rocks,352,14.2
+2021,MK,P,35,Dustan Rocks,353,18.8
+2021,MK,P,35,Dustan Rocks,354,13.6
+2021,LK,P,36,West Washer Women,361,4.2
+2021,LK,P,36,West Washer Women,362,5.5
+2021,LK,P,36,West Washer Women,363,3.7
+2021,LK,P,36,West Washer Women,364,4.9
+2021,LK,P,38,Cliff Green,381,10.2
+2021,LK,P,38,Cliff Green,382,7.5
+2021,LK,P,38,Cliff Green,383,6.7
+2021,LK,P,38,Cliff Green,384,4.7
+2021,UK,OS,50,Carysfort Shallow,501,7.5
+2021,UK,OS,50,Carysfort Shallow,502,7.2
+2021,UK,OS,50,Carysfort Shallow,503,41.8
+2021,UK,OS,50,Carysfort Shallow,504,28
+2021,UK,OS,52,Molasses Shallow,521,34.9
+2021,UK,OS,52,Molasses Shallow,522,43.8
+2021,UK,OS,52,Molasses Shallow,523,34.6
+2021,UK,OS,52,Molasses Shallow,524,31.5
+2021,MK,OS,54,Alligator Shallow,541,35.3
+2021,MK,OS,54,Alligator Shallow,542,34.6
+2021,MK,OS,54,Alligator Shallow,543,63.4
+2021,MK,OS,54,Alligator Shallow,544,37
+2021,MK,OS,55,Tennessee Shallow,551,28.8
+2021,MK,OS,55,Tennessee Shallow,552,32.8
+2021,MK,OS,55,Tennessee Shallow,553,24.2
+2021,MK,OS,55,Tennessee Shallow,554,38.6
+2021,MK,OS,56,Sombrero Shallow,561,10
+2021,MK,OS,56,Sombrero Shallow,562,14.5
+2021,MK,OS,56,Sombrero Shallow,563,17.3
+2021,MK,OS,56,Sombrero Shallow,564,8.4
+2021,LK,OS,59,Western Sambo Shallow,591,18.4
+2021,LK,OS,59,Western Sambo Shallow,592,6.8
+2021,LK,OS,59,Western Sambo Shallow,593,3.3
+2021,LK,OS,59,Western Sambo Shallow,594,2.6
+2021,LK,OS,61,Sand Key Shallow,611,18.7
+2021,LK,OS,61,Sand Key Shallow,612,7.9
+2021,LK,OS,61,Sand Key Shallow,613,14.2
+2021,LK,OS,61,Sand Key Shallow,614,8.2
+2021,UK,OD,70,Carysfort Deep,701,13.5
+2021,UK,OD,70,Carysfort Deep,702,18.1
+2021,UK,OD,70,Carysfort Deep,703,10.7
+2021,UK,OD,70,Carysfort Deep,704,12
+2021,UK,OD,72,Molasses Deep,721,35.6
+2021,UK,OD,72,Molasses Deep,722,25.4
+2021,UK,OD,72,Molasses Deep,723,35.4
+2021,UK,OD,72,Molasses Deep,724,43
+2021,MK,OD,74,Alligator Deep,741,27.7
+2021,MK,OD,74,Alligator Deep,742,18.8
+2021,MK,OD,74,Alligator Deep,743,28.6
+2021,MK,OD,74,Alligator Deep,744,28.5
+2021,MK,OD,75,Tennessee Deep,751,5.8
+2021,MK,OD,75,Tennessee Deep,752,5.4
+2021,MK,OD,75,Tennessee Deep,753,14.7
+2021,MK,OD,75,Tennessee Deep,754,4.9
+2021,MK,OD,76,Sombrero Deep,761,10.9
+2021,MK,OD,76,Sombrero Deep,762,9.3
+2021,MK,OD,76,Sombrero Deep,763,9
+2021,MK,OD,76,Sombrero Deep,764,10.1
+2021,LK,OD,79,Western Sambo Deep,791,12.1
+2021,LK,OD,79,Western Sambo Deep,792,21.2
+2021,LK,OD,79,Western Sambo Deep,793,24.9
+2021,LK,OD,79,Western Sambo Deep,794,20.1
+2021,LK,OD,81,Sand Key Deep,811,34.5
+2021,LK,OD,81,Sand Key Deep,812,33.8
+2021,LK,OD,81,Sand Key Deep,813,40.4
+2021,LK,OD,81,Sand Key Deep,814,47
+2022,UK,P,32,Porter Patch,321,13.7
+2022,UK,P,32,Porter Patch,322,11.2
+2022,UK,P,32,Porter Patch,323,11
+2022,UK,P,32,Porter Patch,324,9.7
+2022,UK,P,33,Admiral,331,19.6
+2022,UK,P,33,Admiral,332,26.1
+2022,UK,P,33,Admiral,333,34.6
+2022,UK,P,33,Admiral,334,39.1
+2022,MK,P,34,West Turtle Shoal,341,8
+2022,MK,P,34,West Turtle Shoal,342,14.4
+2022,MK,P,34,West Turtle Shoal,343,14.7
+2022,MK,P,34,West Turtle Shoal,344,13.6
+2022,MK,P,35,Dustan Rocks,351,14
+2022,MK,P,35,Dustan Rocks,352,18.2
+2022,MK,P,35,Dustan Rocks,353,16.8
+2022,MK,P,35,Dustan Rocks,354,11.6
+2022,LK,P,36,West Washer Women,361,4.7
+2022,LK,P,36,West Washer Women,362,7.8
+2022,LK,P,36,West Washer Women,363,4.1
+2022,LK,P,36,West Washer Women,364,4.5
+2022,LK,P,38,Cliff Green,381,10.8
+2022,LK,P,38,Cliff Green,382,8.2
+2022,LK,P,38,Cliff Green,383,8
+2022,LK,P,38,Cliff Green,384,5.4
+2022,UK,OS,50,Carysfort Shallow,501,7.2
+2022,UK,OS,50,Carysfort Shallow,502,6.2
+2022,UK,OS,50,Carysfort Shallow,503,62.2
+2022,UK,OS,50,Carysfort Shallow,504,35.3
+2022,UK,OS,52,Molasses Shallow,521,32.5
+2022,UK,OS,52,Molasses Shallow,522,51.5
+2022,UK,OS,52,Molasses Shallow,523,32.6
+2022,UK,OS,52,Molasses Shallow,524,40.5
+2022,MK,OS,54,Alligator Shallow,541,38.4
+2022,MK,OS,54,Alligator Shallow,542,43.2
+2022,MK,OS,54,Alligator Shallow,543,60
+2022,MK,OS,54,Alligator Shallow,544,64.4
+2022,MK,OS,55,Tennessee Shallow,551,29.8
+2022,MK,OS,55,Tennessee Shallow,552,30.2
+2022,MK,OS,55,Tennessee Shallow,553,36.8
+2022,MK,OS,55,Tennessee Shallow,554,50.5
+2022,MK,OS,56,Sombrero Shallow,561,7.8
+2022,MK,OS,56,Sombrero Shallow,562,11.9
+2022,MK,OS,56,Sombrero Shallow,563,14.6
+2022,MK,OS,56,Sombrero Shallow,564,8.3
+2022,LK,OS,59,Western Sambo Shallow,591,17
+2022,LK,OS,59,Western Sambo Shallow,592,7
+2022,LK,OS,59,Western Sambo Shallow,593,3.1
+2022,LK,OS,59,Western Sambo Shallow,594,3.4
+2022,LK,OS,61,Sand Key Shallow,611,16.1
+2022,LK,OS,61,Sand Key Shallow,612,6
+2022,LK,OS,61,Sand Key Shallow,613,11.9
+2022,LK,OS,61,Sand Key Shallow,614,8.2
+2022,UK,OD,70,Carysfort Deep,701,15.2
+2022,UK,OD,70,Carysfort Deep,702,16.9
+2022,UK,OD,70,Carysfort Deep,703,15.2
+2022,UK,OD,70,Carysfort Deep,704,12.9
+2022,UK,OD,72,Molasses Deep,721,38.4
+2022,UK,OD,72,Molasses Deep,722,35.9
+2022,UK,OD,72,Molasses Deep,723,32.6
+2022,UK,OD,72,Molasses Deep,724,48.8
+2022,MK,OD,74,Alligator Deep,741,25.4
+2022,MK,OD,74,Alligator Deep,742,19.6
+2022,MK,OD,74,Alligator Deep,743,22.5
+2022,MK,OD,74,Alligator Deep,744,20.5
+2022,MK,OD,75,Tennessee Deep,751,6.2
+2022,MK,OD,75,Tennessee Deep,752,5.8
+2022,MK,OD,75,Tennessee Deep,753,15.5
+2022,MK,OD,75,Tennessee Deep,754,4.3
+2022,MK,OD,76,Sombrero Deep,761,10.2
+2022,MK,OD,76,Sombrero Deep,762,7.6
+2022,MK,OD,76,Sombrero Deep,763,9.7
+2022,MK,OD,76,Sombrero Deep,764,9.8
+2022,LK,OD,79,Western Sambo Deep,791,14.3
+2022,LK,OD,79,Western Sambo Deep,792,16.4
+2022,LK,OD,79,Western Sambo Deep,793,20.4
+2022,LK,OD,79,Western Sambo Deep,794,17.3
+2022,LK,OD,81,Sand Key Deep,811,32.6
+2022,LK,OD,81,Sand Key Deep,812,34.9
+2022,LK,OD,81,Sand Key Deep,813,48.3
+2022,LK,OD,81,Sand Key Deep,814,41.5
+2023,UK,P,32,Porter Patch,321,11.9
+2023,UK,P,32,Porter Patch,322,11.3
+2023,UK,P,32,Porter Patch,323,10.7
+2023,UK,P,32,Porter Patch,324,8.3
+2023,UK,P,33,Admiral,331,14.4
+2023,UK,P,33,Admiral,332,22.4
+2023,UK,P,33,Admiral,333,27
+2023,UK,P,33,Admiral,334,43.6
+2023,MK,P,34,West Turtle Shoal,341,6.7
+2023,MK,P,34,West Turtle Shoal,342,14.1
+2023,MK,P,34,West Turtle Shoal,343,13.6
+2023,MK,P,34,West Turtle Shoal,344,12
+2023,MK,P,35,Dustan Rocks,351,15.7
+2023,MK,P,35,Dustan Rocks,352,17.6
+2023,MK,P,35,Dustan Rocks,353,17.2
+2023,MK,P,35,Dustan Rocks,354,10.9
+2023,LK,P,36,West Washer Women,361,4.6
+2023,LK,P,36,West Washer Women,362,5.4
+2023,LK,P,36,West Washer Women,363,4.6
+2023,LK,P,36,West Washer Women,364,4.2
+2023,LK,P,38,Cliff Green,381,11.5
+2023,LK,P,38,Cliff Green,382,7.4
+2023,LK,P,38,Cliff Green,383,7.6
+2023,LK,P,38,Cliff Green,384,4.8
+2023,UK,OS,50,Carysfort Shallow,501,9.1
+2023,UK,OS,50,Carysfort Shallow,502,5.4
+2023,UK,OS,50,Carysfort Shallow,503,53.6
+2023,UK,OS,50,Carysfort Shallow,504,28.3
+2023,UK,OS,52,Molasses Shallow,521,33.1
+2023,UK,OS,52,Molasses Shallow,522,41.2
+2023,UK,OS,52,Molasses Shallow,523,26.4
+2023,UK,OS,52,Molasses Shallow,524,29.2
+2023,MK,OS,54,Alligator Shallow,541,39
+2023,MK,OS,54,Alligator Shallow,542,36.2
+2023,MK,OS,54,Alligator Shallow,543,67
+2023,MK,OS,54,Alligator Shallow,544,58.8
+2023,MK,OS,55,Tennessee Shallow,551,17.9
+2023,MK,OS,55,Tennessee Shallow,552,30.1
+2023,MK,OS,55,Tennessee Shallow,553,25.2
+2023,MK,OS,55,Tennessee Shallow,554,48.6
+2023,MK,OS,56,Sombrero Shallow,561,8.8
+2023,MK,OS,56,Sombrero Shallow,562,13.7
+2023,MK,OS,56,Sombrero Shallow,563,12.5
+2023,MK,OS,56,Sombrero Shallow,564,8.9
+2023,LK,OS,59,Western Sambo Shallow,591,13.1
+2023,LK,OS,59,Western Sambo Shallow,592,5.2
+2023,LK,OS,59,Western Sambo Shallow,593,2.5
+2023,LK,OS,59,Western Sambo Shallow,594,3.5
+2023,LK,OS,61,Sand Key Shallow,611,9.5
+2023,LK,OS,61,Sand Key Shallow,612,4.8
+2023,LK,OS,61,Sand Key Shallow,613,9.2
+2023,LK,OS,61,Sand Key Shallow,614,5.7
+2023,UK,OD,70,Carysfort Deep,701,14
+2023,UK,OD,70,Carysfort Deep,702,15.1
+2023,UK,OD,70,Carysfort Deep,703,10
+2023,UK,OD,70,Carysfort Deep,704,9.3
+2023,UK,OD,72,Molasses Deep,721,20.7
+2023,UK,OD,72,Molasses Deep,722,19.4
+2023,UK,OD,72,Molasses Deep,723,24.9
+2023,UK,OD,72,Molasses Deep,724,27
+2023,MK,OD,74,Alligator Deep,741,19.3
+2023,MK,OD,74,Alligator Deep,742,19.5
+2023,MK,OD,74,Alligator Deep,743,30.3
+2023,MK,OD,74,Alligator Deep,744,24.7
+2023,MK,OD,75,Tennessee Deep,751,5.9
+2023,MK,OD,75,Tennessee Deep,752,5.3
+2023,MK,OD,75,Tennessee Deep,753,8.3
+2023,MK,OD,75,Tennessee Deep,754,4.6
+2023,MK,OD,76,Sombrero Deep,761,9.2
+2023,MK,OD,76,Sombrero Deep,762,7.7
+2023,MK,OD,76,Sombrero Deep,763,9.9
+2023,MK,OD,76,Sombrero Deep,764,6.6
+2023,LK,OD,79,Western Sambo Deep,791,8.1
+2023,LK,OD,79,Western Sambo Deep,792,12.4
+2023,LK,OD,79,Western Sambo Deep,793,18.8
+2023,LK,OD,79,Western Sambo Deep,794,16.3
+2023,LK,OD,81,Sand Key Deep,811,19.1
+2023,LK,OD,81,Sand Key Deep,812,29.1
+2023,LK,OD,81,Sand Key Deep,813,38.9
+2023,LK,OD,81,Sand Key Deep,814,33.4
