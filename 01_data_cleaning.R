@@ -3,8 +3,6 @@ rm(list = ls())
 #install.packages("librarian")
 librarian::shelf(here, janitor, lubridate, tidyverse, ggplot2)
 
-#### ENVIRONMENTAL DATA ####
-# clean and combine erddap and depth data
 
 #### RECRUIT DATA ####
 # read data
@@ -67,6 +65,9 @@ recruit_long <- recruit_sum %>%
   mutate(density = abundance/tile_area) %>%
   rename(site_name = Site)
 
+# write data
+# write.csv(recruit_long, "clean_data/recruits_clean.csv", row.names = F)
+
 #### JUVENILE DATA ####
 juv_raw <- read.csv(here::here("raw_data", "juv_data.csv"))
 juv_map <- read.csv(here::here("raw_data", "juv_id_map.csv")) %>%
@@ -75,7 +76,7 @@ juv_map <- read.csv(here::here("raw_data", "juv_id_map.csv")) %>%
 
 # subset according to years and sites
 juv_sub <- juv_raw %>%
-  filter(Project_Year %in% c(2017, 2018, 2019), # juveniles linked to one year after recruit data
+  filter(Survey_Year %in% c(2017, 2018, 2019), # juveniles linked to one year after recruit data
          Site_Name %in% sites) %>%
   mutate(recruit_year = Project_Year - 1, # add column that indicates what recruit year it links to - year prior
          cover_year = Project_Year - 1) %>% # for linking to cover data
@@ -107,6 +108,8 @@ juv_long <- juv_sub %>%
          region = Region,
          habitat = Habitat,
          taxa = recruit_map)
+# write data
+# write.csv(juv_long, "clean_data/juv_clean.csv", row.names = F)
 
 #### LTA DATA ####
 lta_map <- read.csv(here::here("raw_data", "lta_id_map.csv")) %>%
@@ -189,6 +192,9 @@ secremp_lta_long <- secremp_lta_sub %>%
 
 comb_lta_long <- rbind(cremp_lta_long, secremp_lta_long)
 
+# write data
+# write.csv(comb_lta_long, "clean_data/lta_clean.csv", row.names = F)
+
 #### COVER DATA ####
 # really only care about macroalgae
 cremp_cover <- read.csv(here::here("raw_data", "cremp_allbenthos_pcover.csv"))
@@ -232,10 +238,86 @@ secremp_macro <- secremp_cover %>%
   select(-id)
 
 comb_macro <- rbind(cremp_macro, secremp_macro)
+# write data
+# write.csv(comb_macro, "clean_data/macro_cover_clean.csv", row.names = F)
 
 #### CORAL DENSITY ####
+cremp_density_raw <- read.csv(here::here("raw_data", "cremp_coral_density.csv"))
+cremp_density_sub <- cremp_density_raw %>%
+  mutate(Site_name = case_when(
+    Site_name == "West Washer Women" ~ "West Washerwoman",
+    T ~ Site_name
+  )) %>%
+  filter(Site_name %in% sites,
+         Year %in% c(2015, 2016, 2017)) %>%
+  mutate(recruit_year = Year + 1, # cover affects recruits the following year
+         juv_year = Year + 2
+  ) %>%
+  rename(cover_year = Year)
 
+secremp_density_raw <- read.csv(here::here("raw_data", "secremp_coral_density.csv"))
+secremp_density_sub <- secremp_density_raw %>%
+  # site names are full name instead of abbrev
+  mutate(Site_name = case_when(
+    Site_name == "Broward County 1" ~ "BC1",
+    Site_name == "Broward County 2" ~ "BC2",
+    Site_name == "Broward County 3" ~ "BC3",
+    Site_name == "Broward County 4" ~ "BC4",
+    Site_name == "Dade County 1" ~ "DC1",
+    Site_name == "Dade County 2" ~ "DC2",
+    Site_name == "Dade County 3" ~ "DC3",
+    Site_name == "Dade County 4" ~ "DC4",
+    Site_name == "Dade County 5" ~ "DC5",
+    Site_name == "Dade County 6" ~ "DC6",
+    Site_name == "Dade County 7" ~ "DC7",
+    Site_name == "Dade County 8" ~ "DC8",
+    T ~ Site_name
+  ) ) %>%
+  filter(Site_name %in% sites,
+         Year %in% c(2015, 2016, 2017)) %>%
+  mutate(recruit_year = Year + 1, # cover affects recruits the following year
+         juv_year = Year + 2
+  ) %>%
+  rename(cover_year = Year) %>%
+  select(-TransectArea)
 
+# check all sites are accounted for 
+setdiff(c(unique(cremp_density_sub$Site_name), unique(secremp_density_sub$Site_name)), sites)
+setdiff(sites, c(unique(cremp_density_sub$Site_name), unique(secremp_density_sub$Site_name)))
+
+# pivot longer and merge datasets
+cremp_density_long <- cremp_density_sub %>%
+  pivot_longer(cols = colnames(cremp_density_sub)[-which(colnames(cremp_density_sub) %in% meta)],
+               names_to = "taxa",
+               values_to = "density") %>%
+  left_join(lta_map, by = "taxa") %>%
+  group_by(cover_year, juv_year, recruit_year, Subregion, Habitat, Site_name, recruit_map) %>%
+  summarise(density = sum(density, na.rm = T)) %>%
+  ungroup() %>%
+  rename(site_name = Site_name,
+         region = Subregion,
+         habitat = Habitat,
+         taxa = recruit_map) %>%
+  filter(!is.na(taxa)) # millepora listed as NA - filter those out
+
+secremp_density_long <- secremp_density_sub %>%
+  pivot_longer(cols = colnames(secremp_density_sub)[-which(colnames(secremp_density_sub) %in% meta)],
+               names_to = "taxa",
+               values_to = "density") %>%
+  left_join(lta_map, by = "taxa") %>%
+  group_by(cover_year, juv_year, recruit_year, Subregion, Habitat, Site_name, recruit_map) %>%
+  summarise(density = sum(density, na.rm = T)) %>%
+  ungroup() %>%
+  rename(site_name = Site_name,
+         region = Subregion,
+         habitat = Habitat,
+         taxa = recruit_map) %>%
+  filter(!is.na(taxa)) # millepora listed as NA - filter those out
+
+comb_density_long <- rbind(cremp_density_long, secremp_density_long)
+
+# write data
+# write.csv(comb_density_long, "clean_data/coral_density_clean.csv", row.names = F)
 
 #### OCTOCORAL DENSITY ####
 # octo data are already in terms of density
@@ -273,3 +355,100 @@ comb_oct <- rbind(cremp_octo_corr, secremp_octo_corr) %>%
 
 # check all sites are present
 setdiff( sites, unique(comb_oct$site_name))
+
+# write data
+# write.csv(comb_oct, "clean_data/adult_octo_density_clean.csv", row.names = F)
+
+#### ENVIRONMENTAL DATA ####
+# clean and combine erddap and depth data
+# raw data are from EPA project
+# remote sensing data
+erddap_env <- read.csv(here::here("raw_data", "df_rls_master.csv")) %>%
+  mutate(site_name = case_when(
+    site_name == "Broward County 1" ~ "BC1",
+    site_name == "Broward County 2" ~ "BC2",
+    site_name == "Broward County 3" ~ "BC3",
+    site_name == "Broward County 4" ~ "BC4",
+    site_name == "Dade County 1" ~ "DC1",
+    site_name == "Dade County 2" ~ "DC2",
+    site_name == "Dade County 3" ~ "DC3",
+    site_name == "Dade County 4" ~ "DC4",
+    site_name == "Dade County 5" ~ "DC5",
+    site_name == "Dade County 6" ~ "DC6",
+    site_name == "Dade County 7" ~ "DC7",
+    site_name == "Dade County 8" ~ "DC8",
+    site_name == "West Washer Women" ~ "West Washerwoman",
+    T ~ site_name
+  ) ) 
+
+# summarise to annual level
+erddap_env_ann <- erddap_env %>%
+  mutate(date = mdy(date),
+         year = year(date)) %>%
+  group_by(year, site_name) %>%
+  summarise(across(c("sst_mean", "chl_mean", "rrs667_mean", "kd490_mean"), ~mean(.x, na.rm = T))) %>%
+  # filter down to relevant years - 2014-2018
+  filter(year %in% c(2014, 2015, 2016, 2017, 2018)) %>%
+  ungroup()
+
+# DHW
+erddap_dhw <- read.csv(here::here("raw_data", "df_dhw_annual_master_rls.csv")) %>%
+  mutate(site_name = case_when(
+    site_name == "Broward County 1" ~ "BC1",
+    site_name == "Broward County 2" ~ "BC2",
+    site_name == "Broward County 3" ~ "BC3",
+    site_name == "Broward County 4" ~ "BC4",
+    site_name == "Dade County 1" ~ "DC1",
+    site_name == "Dade County 2" ~ "DC2",
+    site_name == "Dade County 3" ~ "DC3",
+    site_name == "Dade County 4" ~ "DC4",
+    site_name == "Dade County 5" ~ "DC5",
+    site_name == "Dade County 6" ~ "DC6",
+    site_name == "Dade County 7" ~ "DC7",
+    site_name == "Dade County 8" ~ "DC8",
+    site_name == "West Washer Women" ~ "West Washerwoman",
+    T ~ site_name
+  ) ) %>%
+  # filter down to relevant years - 2014-2018
+  filter(year %in% c(2014, 2015, 2016, 2017, 2018))
+
+# merge data
+erddap_comb <- erddap_env_ann %>%
+  left_join(erddap_dhw, by = c("year", "site_name")) %>%
+  # filter down to relevant sites
+  filter(site_name %in% sites)
+
+# read in depth and metadata
+rls_site_meta <- read.csv(here::here("raw_data", "site_metadata.csv"))
+
+# calculate depth as the mean of the two transects
+rls_site_meta$depth <- rowMeans(rls_site_meta[,c("t1_depth", 't2_depth')], na.rm=TRUE)
+
+# filter down to relevant sites only
+rls_site_meta_sub <- rls_site_meta %>%
+  mutate(site_name = case_when(
+    site_name == "Broward County 1" ~ "BC1",
+    site_name == "Broward County 2" ~ "BC2",
+    site_name == "Broward County 3" ~ "BC3",
+    site_name == "Broward County 4" ~ "BC4",
+    site_name == "Dade County 1" ~ "DC1",
+    site_name == "Dade County 2" ~ "DC2",
+    site_name == "Dade County 3" ~ "DC3",
+    site_name == "Dade County 4" ~ "DC4",
+    site_name == "Dade County 5" ~ "DC5",
+    site_name == "Dade County 6" ~ "DC6",
+    site_name == "Dade County 7" ~ "DC7",
+    site_name == "Dade County 8" ~ "DC8",
+    site_name == "West Washer Women" ~ "West Washerwoman",
+    T ~ site_name
+  ) ) %>%
+  filter(site_name %in% sites) %>%
+  # remove the t1_ and t2_ metadata
+  select(-c("t1_depth", "t2_depth"))
+
+# merge with the erddap data
+env_full <- erddap_comb %>%
+  left_join(rls_site_meta_sub, by = "site_name")
+
+# write data
+# write.csv(env_full, "clean_data/env_data_clean.csv", row.names = F)
