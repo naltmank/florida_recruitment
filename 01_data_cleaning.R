@@ -238,8 +238,13 @@ secremp_macro <- secremp_cover %>%
   select(-id)
 
 comb_macro <- rbind(cremp_macro, secremp_macro)
+macro_mean <- comb_macro %>%
+  group_by(cover_year, juv_year, recruit_year, region, habitat, site_name) %>%
+  summarise(macroalgae = mean(percent_cover, na.rm = T))
+  
+
 # write data
-# write.csv(comb_macro, "clean_data/macro_cover_clean.csv", row.names = F)
+# write.csv(macro_mean, "clean_data/macro_cover_clean.csv", row.names = F)
 
 #### CORAL DENSITY ####
 cremp_density_raw <- read.csv(here::here("raw_data", "cremp_coral_density.csv"))
@@ -348,13 +353,15 @@ secremp_octo_corr <- secremp_octo %>%
 
 comb_oct <- rbind(cremp_octo_corr, secremp_octo_corr) %>%
   filter(site_name %in% sites,
-         year %in% c(2016, 2017, 2018)) %>%
+         year %in% c(2015, 2016, 2017)) %>%
   mutate(recruit_year = year + 1, 
          juv_year = year + 2) %>%
-  rename(cover_year = year)
+  rename(cover_year = year) %>%
+  group_by(cover_year, juv_year, recruit_year, region, habitat, site_name) %>%
+  summarise(OCTO = sum(octocoral_density, na.rm = T))
 
 # check all sites are present
-setdiff( sites, unique(comb_oct$site_name))
+setdiff( unique(comb_oct$site_name), sites)
 
 # write data
 # write.csv(comb_oct, "clean_data/adult_octo_density_clean.csv", row.names = F)
