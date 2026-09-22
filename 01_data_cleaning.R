@@ -22,9 +22,8 @@ recruit_corr <- recruit_raw %>%
     T ~ Site
   ),
   # add year that links to benthic cover data - previous year's cover influences recruits
-  cover_year = recruit_year - 1, 
-  # add the year that links to juvenile data - recruits influence next year's juvs
-  juv_year = recruit_year + 1 
+  cover_year = recruit_year - 1
+  # juvenile year now the same as recruit year - Sep 21
     ) %>%
   # some tiles were scored even though they were partially destroyed in a hurricane
   group_by(recruit_year, Site, Tile) %>%
@@ -39,8 +38,9 @@ recruit_corr <- recruit_raw %>%
     total_tiles = n_distinct(Tile[complete])
   ) %>%
   ungroup() %>%
-  # filter out incomplete tiles
-  filter(complete == TRUE) %>%
+  # filter out incomplete tiles and the last year of recruits data (no corresponding juv data)
+  filter(complete == TRUE,
+         recruit_year != 2018) %>%
   # add a total area column
   mutate(tile_area = total_tiles * # for all tiles in a site
            (2*(0.15^2 - pi*(0.064/2)^2) + # 2 15x15 surfaces each with a 0.64 cm diameter screw in it
@@ -51,7 +51,7 @@ sites <- unique(recruit_corr$Site)
 
 # aggregate to site level
 recruit_sum <- recruit_corr %>%
-  group_by(recruit_year, cover_year, juv_year, Site, tile_area, total_tiles) %>%
+  group_by(recruit_year, cover_year, Site, tile_area, total_tiles) %>%
   summarise(across(all_of(c("AGAR", "FAVI", "PORI", "SIDE", "Other", "UNKS",
                             "TotalSto", "TotalOct", "TotalCor")), sum)
   )
@@ -76,12 +76,11 @@ juv_map <- read.csv(here::here("raw_data", "juv_id_map.csv")) %>%
 
 # subset according to years and sites
 juv_sub <- juv_raw %>%
-  filter(Survey_Year %in% c(2017, 2018, 2019), # juveniles linked to one year after recruit data
+  filter(Project_Year %in% c(2016, 2017), # juveniles linked to one year after recruit data
          Site_Name %in% sites) %>%
-  mutate(recruit_year = Project_Year - 1, # add column that indicates what recruit year it links to - year prior
-         cover_year = Project_Year - 1) %>% # for linking to cover data
-  rename(juv_year = Project_Year) %>%
-  group_by(juv_year, Site_Name) %>%
+  mutate(cover_year = Project_Year - 1) %>% # for linking to cover data
+  rename(recruit_year = Project_Year) %>% # project year is the same as recruits now - not exactly 1 year later
+  group_by(recruit_year, Site_Name) %>%
   mutate(
     total_quadrats = n_distinct(Quadrat),
     complete = total_quadrats == 32,
@@ -99,7 +98,7 @@ setdiff(sites, unique(juv_sub$Site_Name))
 # aggregate to site level
 juv_long <- juv_sub %>%
   filter(Colony_Type %in% "Juv") %>%
-  group_by(recruit_year, cover_year, juv_year, Site_Name, Region, Habitat,
+  group_by(recruit_year, cover_year, Site_Name, Region, Habitat,
            recruit_map, total_quadrats, quadrat_area) %>%
   summarise(abundance = n(),
             .groups = "drop") %>%
@@ -121,9 +120,8 @@ cremp_lta_sub <- cremp_lta_raw %>%
     T ~ Site_name
   )) %>%
   filter(Site_name %in% sites,
-         Year %in% c(2015, 2016, 2017)) %>%
-  mutate(recruit_year = Year + 1, # cover affects recruits the following year
-         juv_year = Year + 2
+         Year %in% c(2015, 2016)) %>%
+  mutate(recruit_year = Year + 1 # cover affects recruits the following year
   ) %>%
   rename(cover_year = Year)
 
@@ -146,9 +144,8 @@ secremp_lta_sub <- secremp_lta_raw %>%
     T ~ Site_name
   ) ) %>%
   filter(Site_name %in% sites,
-         Year %in% c(2015, 2016, 2017)) %>%
-  mutate(recruit_year = Year + 1, # cover affects recruits the following year
-         juv_year = Year + 2
+         Year %in% c(2015, 2016)) %>%
+  mutate(recruit_year = Year + 1 # cover affects recruits the following year
   ) %>%
   rename(cover_year = Year) %>%
   select(-TransectArea)
@@ -165,7 +162,7 @@ cremp_lta_long <- cremp_lta_sub %>%
                names_to = "taxa",
                values_to = "lta") %>%
   left_join(lta_map, by = "taxa") %>%
-  group_by(cover_year, juv_year, recruit_year, Subregion, Habitat, Site_name, recruit_map) %>%
+  group_by(cover_year, recruit_year, Subregion, Habitat, Site_name, recruit_map) %>%
   summarise(lta = sum(lta, na.rm = T)) %>%
   mutate(density = lta/10) %>% # cremp lta data on 10m2 transects
   ungroup() %>%
@@ -180,7 +177,7 @@ secremp_lta_long <- secremp_lta_sub %>%
                names_to = "taxa",
                values_to = "lta") %>%
   left_join(lta_map, by = "taxa") %>%
-  group_by(cover_year, juv_year, recruit_year, Subregion, Habitat, Site_name, recruit_map) %>%
+  group_by(cover_year, recruit_year, Subregion, Habitat, Site_name, recruit_map) %>%
   summarise(lta = sum(lta, na.rm = T)) %>%
   mutate(density = lta/22) %>% # secremp lta data on 22m2 transects
   ungroup() %>%
@@ -205,9 +202,8 @@ cremp_macro <- cremp_cover %>%
   )) %>%
   filter(group_fine == "Macroalgae") %>%
   filter(site_name %in% sites,
-         year %in% c(2015, 2016, 2017)) %>%
-  mutate(recruit_year = year + 1, # cover affects recruits the following year
-         juv_year = year + 2
+         year %in% c(2015, 2016)) %>%
+  mutate(recruit_year = year + 1
   ) %>%
   rename(cover_year = year)
 
@@ -230,16 +226,15 @@ secremp_macro <- secremp_cover %>%
   ) )  %>%
   filter(group_fine == "Macroalgae") %>%
   filter(site_name %in% sites,
-         year %in% c(2015, 2016, 2017)) %>%
-  mutate(recruit_year = year + 1, # cover affects recruits the following year
-         juv_year = year + 2
+         year %in% c(2015, 2016)) %>%
+  mutate(recruit_year = year + 1
   ) %>%
   rename(cover_year = year) %>%
   select(-id)
 
 comb_macro <- rbind(cremp_macro, secremp_macro)
 macro_mean <- comb_macro %>%
-  group_by(cover_year, juv_year, recruit_year, region, habitat, site_name) %>%
+  group_by(cover_year, recruit_year, region, habitat, site_name) %>%
   summarise(macroalgae = mean(percent_cover, na.rm = T))
   
 
@@ -254,9 +249,8 @@ cremp_density_sub <- cremp_density_raw %>%
     T ~ Site_name
   )) %>%
   filter(Site_name %in% sites,
-         Year %in% c(2015, 2016, 2017)) %>%
-  mutate(recruit_year = Year + 1, # cover affects recruits the following year
-         juv_year = Year + 2
+         Year %in% c(2015, 2016)) %>%
+  mutate(recruit_year = Year + 1
   ) %>%
   rename(cover_year = Year)
 
@@ -279,9 +273,8 @@ secremp_density_sub <- secremp_density_raw %>%
     T ~ Site_name
   ) ) %>%
   filter(Site_name %in% sites,
-         Year %in% c(2015, 2016, 2017)) %>%
-  mutate(recruit_year = Year + 1, # cover affects recruits the following year
-         juv_year = Year + 2
+         Year %in% c(2015, 2016)) %>%
+  mutate(recruit_year = Year + 1
   ) %>%
   rename(cover_year = Year) %>%
   select(-TransectArea)
@@ -296,7 +289,7 @@ cremp_density_long <- cremp_density_sub %>%
                names_to = "taxa",
                values_to = "density") %>%
   left_join(lta_map, by = "taxa") %>%
-  group_by(cover_year, juv_year, recruit_year, Subregion, Habitat, Site_name, recruit_map) %>%
+  group_by(cover_year, recruit_year, Subregion, Habitat, Site_name, recruit_map) %>%
   summarise(density = sum(density, na.rm = T)) %>%
   ungroup() %>%
   rename(site_name = Site_name,
@@ -310,7 +303,7 @@ secremp_density_long <- secremp_density_sub %>%
                names_to = "taxa",
                values_to = "density") %>%
   left_join(lta_map, by = "taxa") %>%
-  group_by(cover_year, juv_year, recruit_year, Subregion, Habitat, Site_name, recruit_map) %>%
+  group_by(cover_year, recruit_year, Subregion, Habitat, Site_name, recruit_map) %>%
   summarise(density = sum(density, na.rm = T)) %>%
   ungroup() %>%
   rename(site_name = Site_name,
@@ -353,11 +346,10 @@ secremp_octo_corr <- secremp_octo %>%
 
 comb_oct <- rbind(cremp_octo_corr, secremp_octo_corr) %>%
   filter(site_name %in% sites,
-         year %in% c(2015, 2016, 2017)) %>%
-  mutate(recruit_year = year + 1, 
-         juv_year = year + 2) %>%
+         year %in% c(2015, 2016)) %>%
+  mutate(recruit_year = year + 1) %>%
   rename(cover_year = year) %>%
-  group_by(cover_year, juv_year, recruit_year, region, habitat, site_name) %>%
+  group_by(cover_year, recruit_year, region, habitat, site_name) %>%
   summarise(OCTO = sum(octocoral_density, na.rm = T))
 
 # check all sites are present
@@ -394,8 +386,8 @@ erddap_env_ann <- erddap_env %>%
          year = year(date)) %>%
   group_by(year, site_name) %>%
   summarise(across(c("sst_mean", "chl_mean", "rrs667_mean", "kd490_mean"), ~mean(.x, na.rm = T))) %>%
-  # filter down to relevant years - 2014-2018
-  filter(year %in% c(2014, 2015, 2016, 2017, 2018)) %>%
+  # filter down to relevant years - 2014-2017
+  filter(year %in% c(2014, 2015, 2016, 2017)) %>%
   ungroup()
 
 # DHW
@@ -416,8 +408,8 @@ erddap_dhw <- read.csv(here::here("raw_data", "df_dhw_annual_master_rls.csv")) %
     site_name == "West Washer Women" ~ "West Washerwoman",
     T ~ site_name
   ) ) %>%
-  # filter down to relevant years - 2014-2018
-  filter(year %in% c(2014, 2015, 2016, 2017, 2018))
+  # filter down to relevant years - 2014-2017
+  filter(year %in% c(2014, 2015, 2016, 2017))
 
 # merge data
 erddap_comb <- erddap_env_ann %>%

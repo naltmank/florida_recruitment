@@ -1,91 +1,61 @@
-"cover_year","juv_year","recruit_year","region","habitat","site_name","OCTO"
-2015,2017,2016,"BC","Inner","BC4",20.9
-2015,2017,2016,"BC","Middle","BC2",34.5
-2015,2017,2016,"BC","Nearshore","BC1",44.6
-2015,2017,2016,"BC","Outer","BC3",46.1
-2015,2017,2016,"DC","Inner","DC1",46.4
-2015,2017,2016,"DC","Inner","DC5",35.8
-2015,2017,2016,"DC","Middle","DC2",78
-2015,2017,2016,"DC","Middle","DC7",28.5
-2015,2017,2016,"DC","Nearshore","DC6",38.1
-2015,2017,2016,"DC","Nearshore","DC8",79.6
-2015,2017,2016,"DC","Outer","DC3",30.2
-2015,2017,2016,"DC","Outer","DC4",57.8
-2015,2017,2016,"LK","OD","Sand Key Deep",87
-2015,2017,2016,"LK","OD","Western Sambo Deep",60.5
-2015,2017,2016,"LK","OS","Sand Key Shallow",24.6
-2015,2017,2016,"LK","OS","Western Sambo Shallow",22.5
-2015,2017,2016,"LK","P","Red Dun Reef",58.1
-2015,2017,2016,"LK","P","West Washerwoman",28.2
-2015,2017,2016,"MK","OD","Sombrero Deep",54.3
-2015,2017,2016,"MK","OD","Tennessee Deep",49.1
-2015,2017,2016,"MK","OS","Sombrero Shallow",31.9
-2015,2017,2016,"MK","OS","Tennessee Shallow",107.7
-2015,2017,2016,"MK","P","Dustan Rocks",71.4
-2015,2017,2016,"MK","P","West Turtle Shoal",59.9
-2015,2017,2016,"UK","OD","Carysfort Deep",64.5
-2015,2017,2016,"UK","OD","Molasses Deep",88.1
-2015,2017,2016,"UK","OS","Carysfort Shallow",76.2
-2015,2017,2016,"UK","OS","Molasses Shallow",73.4
-2015,2017,2016,"UK","P","Admiral",97.4
-2015,2017,2016,"UK","P","Porter Patch",64.9
-2016,2018,2017,"BC","Inner","BC4",16.3
-2016,2018,2017,"BC","Middle","BC2",37.1
-2016,2018,2017,"BC","Nearshore","BC1",46.7
-2016,2018,2017,"BC","Outer","BC3",57.2
-2016,2018,2017,"DC","Inner","DC1",53
-2016,2018,2017,"DC","Inner","DC5",34.5
-2016,2018,2017,"DC","Middle","DC2",71.9
-2016,2018,2017,"DC","Middle","DC7",27.8
-2016,2018,2017,"DC","Nearshore","DC6",39.5
-2016,2018,2017,"DC","Nearshore","DC8",77.1
-2016,2018,2017,"DC","Outer","DC3",37.3
-2016,2018,2017,"DC","Outer","DC4",47.7
-2016,2018,2017,"LK","OD","Sand Key Deep",71.7
-2016,2018,2017,"LK","OD","Western Sambo Deep",53.1
-2016,2018,2017,"LK","OS","Sand Key Shallow",20.7
-2016,2018,2017,"LK","OS","Western Sambo Shallow",21.1
-2016,2018,2017,"LK","P","Red Dun Reef",51.1
-2016,2018,2017,"LK","P","West Washerwoman",24.5
-2016,2018,2017,"MK","OD","Sombrero Deep",49.8
-2016,2018,2017,"MK","OD","Tennessee Deep",54.7
-2016,2018,2017,"MK","OS","Sombrero Shallow",32.1
-2016,2018,2017,"MK","OS","Tennessee Shallow",106.4
-2016,2018,2017,"MK","P","Dustan Rocks",61.9
-2016,2018,2017,"MK","P","West Turtle Shoal",52.3
-2016,2018,2017,"UK","OD","Carysfort Deep",56.4
-2016,2018,2017,"UK","OD","Molasses Deep",75.4
-2016,2018,2017,"UK","OS","Carysfort Shallow",67.3
-2016,2018,2017,"UK","OS","Molasses Shallow",76
-2016,2018,2017,"UK","P","Admiral",112
-2016,2018,2017,"UK","P","Porter Patch",76.6
-2017,2019,2018,"BC","Inner","BC4",26.6
-2017,2019,2018,"BC","Middle","BC2",40.7
-2017,2019,2018,"BC","Nearshore","BC1",44.2
-2017,2019,2018,"BC","Outer","BC3",60.9
-2017,2019,2018,"DC","Inner","DC1",45.5
-2017,2019,2018,"DC","Inner","DC5",38.8
-2017,2019,2018,"DC","Middle","DC2",79.7
-2017,2019,2018,"DC","Middle","DC7",26.8
-2017,2019,2018,"DC","Nearshore","DC6",43.4
-2017,2019,2018,"DC","Nearshore","DC8",85.3
-2017,2019,2018,"DC","Outer","DC3",40.6
-2017,2019,2018,"DC","Outer","DC4",59.6
-2017,2019,2018,"LK","OD","Sand Key Deep",123.4
-2017,2019,2018,"LK","OD","Western Sambo Deep",54.1
-2017,2019,2018,"LK","OS","Sand Key Shallow",29.3
-2017,2019,2018,"LK","OS","Western Sambo Shallow",19.6
-2017,2019,2018,"LK","P","Red Dun Reef",54.7
-2017,2019,2018,"LK","P","West Washerwoman",23.6
-2017,2019,2018,"MK","OD","Sombrero Deep",48.6
-2017,2019,2018,"MK","OD","Tennessee Deep",55.2
-2017,2019,2018,"MK","OS","Sombrero Shallow",32.2
-2017,2019,2018,"MK","OS","Tennessee Shallow",110.6
-2017,2019,2018,"MK","P","Dustan Rocks",60.1
-2017,2019,2018,"MK","P","West Turtle Shoal",55.1
-2017,2019,2018,"UK","OD","Carysfort Deep",55.4
-2017,2019,2018,"UK","OD","Molasses Deep",77.9
-2017,2019,2018,"UK","OS","Carysfort Shallow",79.6
-2017,2019,2018,"UK","OS","Molasses Shallow",76.9
-2017,2019,2018,"UK","P","Admiral",128.3
-2017,2019,2018,"UK","P","Porter Patch",70.3
+"cover_year","recruit_year","region","habitat","site_name","OCTO"
+2015,2016,"BC","Inner","BC4",20.9
+2015,2016,"BC","Middle","BC2",34.5
+2015,2016,"BC","Nearshore","BC1",44.6
+2015,2016,"BC","Outer","BC3",46.1
+2015,2016,"DC","Inner","DC1",46.4
+2015,2016,"DC","Inner","DC5",35.8
+2015,2016,"DC","Middle","DC2",78
+2015,2016,"DC","Middle","DC7",28.5
+2015,2016,"DC","Nearshore","DC6",38.1
+2015,2016,"DC","Nearshore","DC8",79.6
+2015,2016,"DC","Outer","DC3",30.2
+2015,2016,"DC","Outer","DC4",57.8
+2015,2016,"LK","OD","Sand Key Deep",87
+2015,2016,"LK","OD","Western Sambo Deep",60.5
+2015,2016,"LK","OS","Sand Key Shallow",24.6
+2015,2016,"LK","OS","Western Sambo Shallow",22.5
+2015,2016,"LK","P","Red Dun Reef",58.1
+2015,2016,"LK","P","West Washerwoman",28.2
+2015,2016,"MK","OD","Sombrero Deep",54.3
+2015,2016,"MK","OD","Tennessee Deep",49.1
+2015,2016,"MK","OS","Sombrero Shallow",31.9
+2015,2016,"MK","OS","Tennessee Shallow",107.7
+2015,2016,"MK","P","Dustan Rocks",71.4
+2015,2016,"MK","P","West Turtle Shoal",59.9
+2015,2016,"UK","OD","Carysfort Deep",64.5
+2015,2016,"UK","OD","Molasses Deep",88.1
+2015,2016,"UK","OS","Carysfort Shallow",76.2
+2015,2016,"UK","OS","Molasses Shallow",73.4
+2015,2016,"UK","P","Admiral",97.4
+2015,2016,"UK","P","Porter Patch",64.9
+2016,2017,"BC","Inner","BC4",16.3
+2016,2017,"BC","Middle","BC2",37.1
+2016,2017,"BC","Nearshore","BC1",46.7
+2016,2017,"BC","Outer","BC3",57.2
+2016,2017,"DC","Inner","DC1",53
+2016,2017,"DC","Inner","DC5",34.5
+2016,2017,"DC","Middle","DC2",71.9
+2016,2017,"DC","Middle","DC7",27.8
+2016,2017,"DC","Nearshore","DC6",39.5
+2016,2017,"DC","Nearshore","DC8",77.1
+2016,2017,"DC","Outer","DC3",37.3
+2016,2017,"DC","Outer","DC4",47.7
+2016,2017,"LK","OD","Sand Key Deep",71.7
+2016,2017,"LK","OD","Western Sambo Deep",53.1
+2016,2017,"LK","OS","Sand Key Shallow",20.7
+2016,2017,"LK","OS","Western Sambo Shallow",21.1
+2016,2017,"LK","P","Red Dun Reef",51.1
+2016,2017,"LK","P","West Washerwoman",24.5
+2016,2017,"MK","OD","Sombrero Deep",49.8
+2016,2017,"MK","OD","Tennessee Deep",54.7
+2016,2017,"MK","OS","Sombrero Shallow",32.1
+2016,2017,"MK","OS","Tennessee Shallow",106.4
+2016,2017,"MK","P","Dustan Rocks",61.9
+2016,2017,"MK","P","West Turtle Shoal",52.3
+2016,2017,"UK","OD","Carysfort Deep",56.4
+2016,2017,"UK","OD","Molasses Deep",75.4
+2016,2017,"UK","OS","Carysfort Shallow",67.3
+2016,2017,"UK","OS","Molasses Shallow",76
+2016,2017,"UK","P","Admiral",112
+2016,2017,"UK","P","Porter Patch",76.6

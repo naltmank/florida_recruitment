@@ -30,7 +30,7 @@ adult_wide <- adult_sub %>%
   left_join(octo_sub, by = c("study_year", "site_name"))
 
 # set metadata
-adult_meta <- c("cover_year", "juv_year", "recruit_year", "region", "habitat", "site_name",
+adult_meta <- c("cover_year", "recruit_year", "region", "habitat", "site_name",
                 "study_year", "unique_id", "design")
 
 # subset species matrix
@@ -41,9 +41,14 @@ rownames(adult_matrix) <- adult_wide$unique_id
 adult_matrix_log <- log(adult_matrix + 1)
 
 # conduct PERMANOVA
-adonis2(adult_matrix_log ~ study_year, method = "bray", by = "terms",
+adonis2(adult_matrix_log ~ study_year*design, method = "bray", by = "terms",
         data = adult_wide)
-# R2 = 0.004, F = 0.17, P = 0.97
+# Df SumOfSqs      R2       F Pr(>F)    
+# study_year         1  0.00468 0.00203  0.2088  0.873    
+# design             1  1.04278 0.45221 46.5094  0.001 ***
+#   study_year:design  1  0.00293 0.00127  0.1305  0.911    
+# Residual          56  1.25557 0.54449                   
+# Total             59  2.30595 1.00000  
 
 
 # run ordination
@@ -67,11 +72,11 @@ adult_species_scores$species <- rownames(adult_species_scores)
     geom_text(data = adult_species_scores, aes(x = NMDS1, y = NMDS2, label=species)) +
     stat_ellipse(data= adult_site_scores_full, aes(x=NMDS1,y=NMDS2, colour = study_year, linetype = design),
                  level = 0.95) +
-    labs(title = "a.", colour = "Year", shape = "Region") +
+    labs(title = "a.", colour = "Year", shape = "Region", linetype = "Region") +
     theme_bw() + 
     theme(axis.title.x = element_text(size=18), 
           axis.title.y = element_text(size=18), 
-          strip.text.x = element_text(size = 25),
+          plot.title = element_text(size = 18),
           panel.grid.major = element_blank(),  #remove major-grid labels
           panel.grid.minor = element_blank(),  #remove minor-grid labels
           legend.position = 'bottom', # move legend to bottom
@@ -80,9 +85,6 @@ adult_species_scores$species <- rownames(adult_species_scores)
 
 #### RECRUITS ####
 recruit <- read.csv(here::here("clean_data", "recruits_clean.csv"))
-
-
-
 
 # filter out UNKS, Other, TotalCor, and TotalSto, mutate TotalOct to OCTO
 recruit_sub <- recruit %>%
@@ -112,7 +114,7 @@ recruit_wide <- recruit_sub %>%
   )
 
 # set metadata
-recruit_meta <- c("cover_year", "juv_year", "recruit_year", "region", "habitat", "site_name",
+recruit_meta <- c("cover_year",  "recruit_year", "region", "habitat", "site_name",
                 "study_year", "unique_id", "design")
 
 # subset species matrix
@@ -123,11 +125,15 @@ rownames(recruit_matrix) <- recruit_wide$unique_id
 recruit_matrix_log <- log(recruit_matrix + 1)
 
 # conduct PERMANOVA
+set.seed(1032)
 adonis2(recruit_matrix_log ~ study_year*design, method = "bray", by = "terms",
         data = recruit_wide)
-
-adonis2(formula = recruit_matrix_log ~ study_year , data = recruit_wide, method = "bray", by = "terms")
-# R2 = 0.17, F = 8.6, P = 0.001
+# Df SumOfSqs      R2      F Pr(>F)   
+# study_year         1   0.4295 0.06496 4.2900  0.008 **
+#   design             1   0.4200 0.06353 4.1954  0.008 **
+#   study_year:design  1   0.1556 0.02353 1.5540  0.178   
+# Residual          56   5.6067 0.84798                 
+# Total             59   6.6118 1.00000 
 
 
 # run ordination
@@ -153,7 +159,7 @@ recruit_species_scores$species <- rownames(recruit_species_scores)
     geom_text(data = recruit_species_scores, aes(x = NMDS1, y = NMDS2, label=species)) +
     stat_ellipse(data= recruit_site_scores_full, aes(x=NMDS1,y=NMDS2, colour = study_year, linetype = design),
                  level = 0.95) +
-    labs(title = "b.", colour = "Year", shape = "Region") +
+    labs(title = "b.", colour = "Year", shape = "Region", linetype = "Region") +
     theme_bw() + 
     theme(axis.title.x = element_text(size=18), 
           axis.title.y = element_text(size=18), 
@@ -165,4 +171,82 @@ recruit_species_scores$species <- rownames(recruit_species_scores)
 )
 
 #### JUVENILES ####
+juv <- read.csv(here::here("clean_data", "juv_clean.csv"))
+
+juv_sub <- juv %>%
+  filter(!taxa %in% c("Other", "UNKS", NA)) %>%
+  select(-c(abundance, total_quadrats, quadrat_area))
+
+
+# pivot wide
+juv_wide <- juv_sub %>%
+  pivot_wider(names_from = taxa,
+              values_from = density,
+              values_fill = 0) %>%
+  # set year to factors
+  mutate(study_year = as.factor(recruit_year), # setting juv_year as the primary year of interest
+         unique_id = paste0(site_name, "-", study_year)
+  ) %>%
+  mutate(
+    design = case_when(
+      region == "SEFL" ~ "SE FL",
+      T ~ "FL Keys"
+    )
+  )
+
+# set metadata
+juv_meta <- c("cover_year",  "recruit_year", "region", "habitat", "site_name",
+                  "study_year", "unique_id", "design")
+
+# subset species matrix
+juv_matrix <- as.matrix(juv_wide[,-which(names(juv_wide) %in% juv_meta)])
+rownames(juv_matrix) <- juv_wide$unique_id
+
+# log transform for skewness
+juv_matrix_log <- log(juv_matrix + 1)
+
+# conduct PERMANOVA
+adonis2(juv_matrix_log ~ study_year*design, method = "bray", by = "terms",
+        data = juv_wide)
+# Df SumOfSqs      R2       F Pr(>F)    
+# study_year         1   0.0265 0.00547  0.4338  0.743    
+# design             1   1.3725 0.28315 22.4621  0.001 ***
+#   study_year:design  1   0.0264 0.00545  0.4323  0.748    
+# Residual          56   3.4218 0.70593                   
+# Total             59   4.8472 1.00000 
+
+
+# run ordination
+set.seed(1032)
+juv_ord2 <- metaMDS(juv_matrix_log, distance = "bray", k = 2, maxit = 999, trymax = 999) # 0.13
+juv_ord3 <- metaMDS(juv_matrix_log, distance = "bray", k = 3, maxit = 999, trymax = 999) # 0.08
+
+
+juv_site_scores <- as.data.frame(scores(juv_ord3, "sites"))
+juv_site_scores$unique_id <- rownames(juv_site_scores)
+juv_site_scores_full <- juv_site_scores %>%
+  left_join(juv_wide, by = "unique_id")
+
+juv_species_scores <- as.data.frame(scores(juv_ord3, "species"))
+juv_species_scores$species <- rownames(juv_species_scores)
+
+# plot
+(juv_nmds_plot <- 
+    ggplot() + 
+    # add sites
+    geom_point(data= juv_site_scores_full, aes(x=NMDS1,y=NMDS2, colour = study_year, shape = design)) + 
+    # add species
+    geom_text(data = juv_species_scores, aes(x = NMDS1, y = NMDS2, label=species)) +
+    stat_ellipse(data= juv_site_scores_full, aes(x=NMDS1,y=NMDS2, colour = study_year, linetype = design),
+                 level = 0.95) +
+    labs(title = "c.", colour = "Year", shape = "Region", linetype = "Region") +
+    theme_bw() + 
+    theme(axis.title.x = element_text(size=18), 
+          axis.title.y = element_text(size=18), 
+          strip.text.x = element_text(size = 25),
+          panel.grid.major = element_blank(),  #remove major-grid labels
+          panel.grid.minor = element_blank(),  #remove minor-grid labels
+          legend.position = 'bottom', # move legend to bottom
+          legend.box.background = element_rect(colour = "black")) 
+)
 

@@ -1,0 +1,310 @@
+"recruit_year","cover_year","site_name","region","habitat","taxa","total_quadrats","quadrat_area","abundance","density"
+2016,2015,"Admiral","UK","P","FAVI",32,8,3,0.375
+2016,2015,"Admiral","UK","P","Other",32,8,2,0.25
+2016,2015,"Admiral","UK","P","PORI",32,8,8,1
+2016,2015,"Admiral","UK","P","SIDE",32,8,30,3.75
+2016,2015,"Admiral","UK","P","UNKS",32,8,1,0.125
+2016,2015,"BC1","SEFL","Nearshore","FAVI",32,8,7,0.875
+2016,2015,"BC1","SEFL","Nearshore","Other",32,8,1,0.125
+2016,2015,"BC1","SEFL","Nearshore","PORI",32,8,2,0.25
+2016,2015,"BC1","SEFL","Nearshore","SIDE",32,8,25,3.125
+2016,2015,"BC1","SEFL","Nearshore","UNKS",32,8,3,0.375
+2016,2015,"BC2","SEFL","Middle","FAVI",32,8,9,1.125
+2016,2015,"BC2","SEFL","Middle","Other",32,8,3,0.375
+2016,2015,"BC2","SEFL","Middle","PORI",32,8,1,0.125
+2016,2015,"BC2","SEFL","Middle","SIDE",32,8,6,0.75
+2016,2015,"BC3","SEFL","Outer","FAVI",32,8,7,0.875
+2016,2015,"BC3","SEFL","Outer","Other",32,8,14,1.75
+2016,2015,"BC3","SEFL","Outer","PORI",32,8,1,0.125
+2016,2015,"BC3","SEFL","Outer","SIDE",32,8,9,1.125
+2016,2015,"BC3","SEFL","Outer","UNKS",32,8,2,0.25
+2016,2015,"BC4","SEFL","Inner","AGAR",32,8,1,0.125
+2016,2015,"BC4","SEFL","Inner","FAVI",32,8,12,1.5
+2016,2015,"BC4","SEFL","Inner","Other",32,8,4,0.5
+2016,2015,"BC4","SEFL","Inner","PORI",32,8,61,7.625
+2016,2015,"BC4","SEFL","Inner","SIDE",32,8,12,1.5
+2016,2015,"Carysfort Deep","UK","OD","AGAR",32,8,32,4
+2016,2015,"Carysfort Deep","UK","OD","FAVI",32,8,7,0.875
+2016,2015,"Carysfort Deep","UK","OD","Other",32,8,8,1
+2016,2015,"Carysfort Deep","UK","OD","PORI",32,8,26,3.25
+2016,2015,"Carysfort Deep","UK","OD","SIDE",32,8,27,3.375
+2016,2015,"Carysfort Deep","UK","OD","UNKS",32,8,2,0.25
+2016,2015,"Carysfort Deep","UK","OD",NA,32,8,2,0.25
+2016,2015,"Carysfort Shallow","UK","OS","AGAR",32,8,5,0.625
+2016,2015,"Carysfort Shallow","UK","OS","FAVI",32,8,1,0.125
+2016,2015,"Carysfort Shallow","UK","OS","PORI",32,8,68,8.5
+2016,2015,"Carysfort Shallow","UK","OS","SIDE",32,8,4,0.5
+2016,2015,"DC1","SEFL","Inner","AGAR",32,8,2,0.25
+2016,2015,"DC1","SEFL","Inner","FAVI",32,8,8,1
+2016,2015,"DC1","SEFL","Inner","Other",32,8,2,0.25
+2016,2015,"DC1","SEFL","Inner","PORI",32,8,17,2.125
+2016,2015,"DC1","SEFL","Inner","SIDE",32,8,34,4.25
+2016,2015,"DC1","SEFL","Inner",NA,32,8,1,0.125
+2016,2015,"DC2","SEFL","Middle","AGAR",32,8,2,0.25
+2016,2015,"DC2","SEFL","Middle","FAVI",32,8,8,1
+2016,2015,"DC2","SEFL","Middle","Other",32,8,19,2.375
+2016,2015,"DC2","SEFL","Middle","PORI",32,8,1,0.125
+2016,2015,"DC2","SEFL","Middle","SIDE",32,8,26,3.25
+2016,2015,"DC2","SEFL","Middle","UNKS",32,8,3,0.375
+2016,2015,"DC3","SEFL","Outer","FAVI",32,8,2,0.25
+2016,2015,"DC3","SEFL","Outer","Other",32,8,3,0.375
+2016,2015,"DC3","SEFL","Outer","SIDE",32,8,6,0.75
+2016,2015,"DC4","SEFL","Outer","AGAR",32,8,1,0.125
+2016,2015,"DC4","SEFL","Outer","FAVI",32,8,11,1.375
+2016,2015,"DC4","SEFL","Outer","Other",32,8,7,0.875
+2016,2015,"DC4","SEFL","Outer","PORI",32,8,7,0.875
+2016,2015,"DC4","SEFL","Outer","SIDE",32,8,3,0.375
+2016,2015,"DC5","SEFL","Inner","AGAR",32,8,14,1.75
+2016,2015,"DC5","SEFL","Inner","FAVI",32,8,4,0.5
+2016,2015,"DC5","SEFL","Inner","Other",32,8,4,0.5
+2016,2015,"DC5","SEFL","Inner","PORI",32,8,30,3.75
+2016,2015,"DC5","SEFL","Inner","SIDE",32,8,12,1.5
+2016,2015,"DC6","SEFL","Nearshore","PORI",32,8,23,2.875
+2016,2015,"DC6","SEFL","Nearshore","SIDE",32,8,39,4.875
+2016,2015,"DC7","SEFL","Middle","FAVI",32,8,12,1.5
+2016,2015,"DC7","SEFL","Middle","Other",32,8,12,1.5
+2016,2015,"DC7","SEFL","Middle","PORI",32,8,2,0.25
+2016,2015,"DC7","SEFL","Middle","SIDE",32,8,17,2.125
+2016,2015,"DC7","SEFL","Middle",NA,32,8,1,0.125
+2016,2015,"DC8","SEFL","Nearshore","Other",32,8,2,0.25
+2016,2015,"DC8","SEFL","Nearshore","PORI",32,8,1,0.125
+2016,2015,"DC8","SEFL","Nearshore","SIDE",32,8,12,1.5
+2016,2015,"DC8","SEFL","Nearshore","UNKS",32,8,1,0.125
+2016,2015,"Dustan Rocks","MK","P","FAVI",32,8,3,0.375
+2016,2015,"Dustan Rocks","MK","P","Other",32,8,7,0.875
+2016,2015,"Dustan Rocks","MK","P","PORI",32,8,17,2.125
+2016,2015,"Dustan Rocks","MK","P","SIDE",32,8,53,6.625
+2016,2015,"Molasses Deep","UK","OD","AGAR",32,8,23,2.875
+2016,2015,"Molasses Deep","UK","OD","FAVI",32,8,4,0.5
+2016,2015,"Molasses Deep","UK","OD","Other",32,8,8,1
+2016,2015,"Molasses Deep","UK","OD","PORI",32,8,35,4.375
+2016,2015,"Molasses Deep","UK","OD","SIDE",32,8,32,4
+2016,2015,"Molasses Deep","UK","OD","UNKS",32,8,2,0.25
+2016,2015,"Molasses Shallow","UK","OS","AGAR",32,8,21,2.625
+2016,2015,"Molasses Shallow","UK","OS","FAVI",32,8,2,0.25
+2016,2015,"Molasses Shallow","UK","OS","Other",32,8,2,0.25
+2016,2015,"Molasses Shallow","UK","OS","PORI",32,8,17,2.125
+2016,2015,"Molasses Shallow","UK","OS","SIDE",32,8,18,2.25
+2016,2015,"Molasses Shallow","UK","OS",NA,32,8,1,0.125
+2016,2015,"Porter Patch","UK","P","AGAR",32,8,3,0.375
+2016,2015,"Porter Patch","UK","P","FAVI",32,8,1,0.125
+2016,2015,"Porter Patch","UK","P","Other",32,8,7,0.875
+2016,2015,"Porter Patch","UK","P","PORI",32,8,21,2.625
+2016,2015,"Porter Patch","UK","P","SIDE",32,8,31,3.875
+2016,2015,"Red Dun Reef","LK","P","FAVI",32,8,10,1.25
+2016,2015,"Red Dun Reef","LK","P","Other",32,8,50,6.25
+2016,2015,"Red Dun Reef","LK","P","PORI",32,8,20,2.5
+2016,2015,"Red Dun Reef","LK","P","SIDE",32,8,105,13.125
+2016,2015,"Red Dun Reef","LK","P","UNKS",32,8,2,0.25
+2016,2015,"Sand Key Deep","LK","OD","AGAR",32,8,2,0.25
+2016,2015,"Sand Key Deep","LK","OD","FAVI",32,8,10,1.25
+2016,2015,"Sand Key Deep","LK","OD","Other",32,8,14,1.75
+2016,2015,"Sand Key Deep","LK","OD","PORI",32,8,22,2.75
+2016,2015,"Sand Key Deep","LK","OD","SIDE",32,8,54,6.75
+2016,2015,"Sand Key Deep","LK","OD","UNKS",32,8,1,0.125
+2016,2015,"Sand Key Shallow","LK","OS","AGAR",32,8,13,1.625
+2016,2015,"Sand Key Shallow","LK","OS","FAVI",32,8,1,0.125
+2016,2015,"Sand Key Shallow","LK","OS","Other",32,8,2,0.25
+2016,2015,"Sand Key Shallow","LK","OS","PORI",32,8,79,9.875
+2016,2015,"Sand Key Shallow","LK","OS","SIDE",32,8,25,3.125
+2016,2015,"Sand Key Shallow","LK","OS","UNKS",32,8,2,0.25
+2016,2015,"Sombrero Deep","MK","OD","AGAR",32,8,18,2.25
+2016,2015,"Sombrero Deep","MK","OD","FAVI",32,8,28,3.5
+2016,2015,"Sombrero Deep","MK","OD","Other",32,8,65,8.125
+2016,2015,"Sombrero Deep","MK","OD","PORI",32,8,39,4.875
+2016,2015,"Sombrero Deep","MK","OD","SIDE",32,8,201,25.125
+2016,2015,"Sombrero Deep","MK","OD","UNKS",32,8,10,1.25
+2016,2015,"Sombrero Deep","MK","OD",NA,32,8,1,0.125
+2016,2015,"Sombrero Shallow","MK","OS","AGAR",32,8,31,3.875
+2016,2015,"Sombrero Shallow","MK","OS","FAVI",32,8,5,0.625
+2016,2015,"Sombrero Shallow","MK","OS","Other",32,8,1,0.125
+2016,2015,"Sombrero Shallow","MK","OS","PORI",32,8,16,2
+2016,2015,"Sombrero Shallow","MK","OS","SIDE",32,8,18,2.25
+2016,2015,"Tennessee Deep","MK","OD","AGAR",32,8,7,0.875
+2016,2015,"Tennessee Deep","MK","OD","FAVI",32,8,8,1
+2016,2015,"Tennessee Deep","MK","OD","Other",32,8,19,2.375
+2016,2015,"Tennessee Deep","MK","OD","PORI",32,8,23,2.875
+2016,2015,"Tennessee Deep","MK","OD","SIDE",32,8,66,8.25
+2016,2015,"Tennessee Deep","MK","OD","UNKS",32,8,1,0.125
+2016,2015,"Tennessee Shallow","MK","OS","AGAR",32,8,2,0.25
+2016,2015,"Tennessee Shallow","MK","OS","FAVI",32,8,14,1.75
+2016,2015,"Tennessee Shallow","MK","OS","Other",32,8,17,2.125
+2016,2015,"Tennessee Shallow","MK","OS","PORI",32,8,48,6
+2016,2015,"Tennessee Shallow","MK","OS","SIDE",32,8,30,3.75
+2016,2015,"Tennessee Shallow","MK","OS","UNKS",32,8,1,0.125
+2016,2015,"West Turtle Shoal","MK","P","AGAR",32,8,10,1.25
+2016,2015,"West Turtle Shoal","MK","P","FAVI",32,8,9,1.125
+2016,2015,"West Turtle Shoal","MK","P","Other",32,8,12,1.5
+2016,2015,"West Turtle Shoal","MK","P","PORI",32,8,67,8.375
+2016,2015,"West Turtle Shoal","MK","P","SIDE",32,8,66,8.25
+2016,2015,"West Turtle Shoal","MK","P","UNKS",32,8,5,0.625
+2016,2015,"West Washerwoman","LK","P","AGAR",32,8,4,0.5
+2016,2015,"West Washerwoman","LK","P","FAVI",32,8,4,0.5
+2016,2015,"West Washerwoman","LK","P","Other",32,8,31,3.875
+2016,2015,"West Washerwoman","LK","P","PORI",32,8,55,6.875
+2016,2015,"West Washerwoman","LK","P","SIDE",32,8,73,9.125
+2016,2015,"West Washerwoman","LK","P","UNKS",32,8,2,0.25
+2016,2015,"Western Sambo Deep","LK","OD","AGAR",32,8,11,1.375
+2016,2015,"Western Sambo Deep","LK","OD","FAVI",32,8,7,0.875
+2016,2015,"Western Sambo Deep","LK","OD","Other",32,8,30,3.75
+2016,2015,"Western Sambo Deep","LK","OD","PORI",32,8,22,2.75
+2016,2015,"Western Sambo Deep","LK","OD","SIDE",32,8,105,13.125
+2016,2015,"Western Sambo Shallow","LK","OS","AGAR",32,8,31,3.875
+2016,2015,"Western Sambo Shallow","LK","OS","FAVI",32,8,8,1
+2016,2015,"Western Sambo Shallow","LK","OS","Other",32,8,3,0.375
+2016,2015,"Western Sambo Shallow","LK","OS","PORI",32,8,58,7.25
+2016,2015,"Western Sambo Shallow","LK","OS","SIDE",32,8,23,2.875
+2016,2015,"Western Sambo Shallow","LK","OS",NA,32,8,1,0.125
+2017,2016,"Admiral","UK","P","AGAR",32,8,1,0.125
+2017,2016,"Admiral","UK","P","FAVI",32,8,1,0.125
+2017,2016,"Admiral","UK","P","PORI",32,8,9,1.125
+2017,2016,"Admiral","UK","P","SIDE",32,8,22,2.75
+2017,2016,"BC1","SEFL","Nearshore","FAVI",31,7.75,4,0.516129032258065
+2017,2016,"BC1","SEFL","Nearshore","Other",31,7.75,1,0.129032258064516
+2017,2016,"BC1","SEFL","Nearshore","PORI",31,7.75,4,0.516129032258065
+2017,2016,"BC1","SEFL","Nearshore","SIDE",31,7.75,27,3.48387096774194
+2017,2016,"BC1","SEFL","Nearshore","UNKS",31,7.75,1,0.129032258064516
+2017,2016,"BC2","SEFL","Middle","FAVI",32,8,12,1.5
+2017,2016,"BC2","SEFL","Middle","Other",32,8,3,0.375
+2017,2016,"BC2","SEFL","Middle","PORI",32,8,11,1.375
+2017,2016,"BC2","SEFL","Middle","SIDE",32,8,8,1
+2017,2016,"BC3","SEFL","Outer","FAVI",32,8,2,0.25
+2017,2016,"BC3","SEFL","Outer","Other",32,8,17,2.125
+2017,2016,"BC3","SEFL","Outer","PORI",32,8,2,0.25
+2017,2016,"BC3","SEFL","Outer","SIDE",32,8,11,1.375
+2017,2016,"BC3","SEFL","Outer","UNKS",32,8,1,0.125
+2017,2016,"BC4","SEFL","Inner","AGAR",32,8,2,0.25
+2017,2016,"BC4","SEFL","Inner","FAVI",32,8,11,1.375
+2017,2016,"BC4","SEFL","Inner","Other",32,8,5,0.625
+2017,2016,"BC4","SEFL","Inner","PORI",32,8,79,9.875
+2017,2016,"BC4","SEFL","Inner","SIDE",32,8,9,1.125
+2017,2016,"Carysfort Deep","UK","OD","AGAR",32,8,33,4.125
+2017,2016,"Carysfort Deep","UK","OD","FAVI",32,8,7,0.875
+2017,2016,"Carysfort Deep","UK","OD","Other",32,8,13,1.625
+2017,2016,"Carysfort Deep","UK","OD","PORI",32,8,34,4.25
+2017,2016,"Carysfort Deep","UK","OD","SIDE",32,8,35,4.375
+2017,2016,"Carysfort Deep","UK","OD","UNKS",32,8,4,0.5
+2017,2016,"Carysfort Shallow","UK","OS","AGAR",32,8,10,1.25
+2017,2016,"Carysfort Shallow","UK","OS","FAVI",32,8,1,0.125
+2017,2016,"Carysfort Shallow","UK","OS","Other",32,8,5,0.625
+2017,2016,"Carysfort Shallow","UK","OS","PORI",32,8,57,7.125
+2017,2016,"Carysfort Shallow","UK","OS","SIDE",32,8,5,0.625
+2017,2016,"DC1","SEFL","Inner","AGAR",32,8,3,0.375
+2017,2016,"DC1","SEFL","Inner","FAVI",32,8,5,0.625
+2017,2016,"DC1","SEFL","Inner","Other",32,8,3,0.375
+2017,2016,"DC1","SEFL","Inner","PORI",32,8,26,3.25
+2017,2016,"DC1","SEFL","Inner","SIDE",32,8,57,7.125
+2017,2016,"DC2","SEFL","Middle","FAVI",32,8,9,1.125
+2017,2016,"DC2","SEFL","Middle","Other",32,8,17,2.125
+2017,2016,"DC2","SEFL","Middle","PORI",32,8,4,0.5
+2017,2016,"DC2","SEFL","Middle","SIDE",32,8,25,3.125
+2017,2016,"DC2","SEFL","Middle","UNKS",32,8,1,0.125
+2017,2016,"DC3","SEFL","Outer","FAVI",32,8,2,0.25
+2017,2016,"DC3","SEFL","Outer","Other",32,8,4,0.5
+2017,2016,"DC3","SEFL","Outer","SIDE",32,8,4,0.5
+2017,2016,"DC4","SEFL","Outer","AGAR",32,8,2,0.25
+2017,2016,"DC4","SEFL","Outer","FAVI",32,8,9,1.125
+2017,2016,"DC4","SEFL","Outer","Other",32,8,6,0.75
+2017,2016,"DC4","SEFL","Outer","PORI",32,8,5,0.625
+2017,2016,"DC4","SEFL","Outer","SIDE",32,8,6,0.75
+2017,2016,"DC5","SEFL","Inner","AGAR",32,8,16,2
+2017,2016,"DC5","SEFL","Inner","FAVI",32,8,3,0.375
+2017,2016,"DC5","SEFL","Inner","Other",32,8,4,0.5
+2017,2016,"DC5","SEFL","Inner","PORI",32,8,17,2.125
+2017,2016,"DC5","SEFL","Inner","SIDE",32,8,18,2.25
+2017,2016,"DC5","SEFL","Inner","UNKS",32,8,1,0.125
+2017,2016,"DC6","SEFL","Nearshore","PORI",32,8,35,4.375
+2017,2016,"DC6","SEFL","Nearshore","SIDE",32,8,45,5.625
+2017,2016,"DC6","SEFL","Nearshore","UNKS",32,8,1,0.125
+2017,2016,"DC7","SEFL","Middle","FAVI",32,8,9,1.125
+2017,2016,"DC7","SEFL","Middle","Other",32,8,18,2.25
+2017,2016,"DC7","SEFL","Middle","PORI",32,8,12,1.5
+2017,2016,"DC7","SEFL","Middle","SIDE",32,8,12,1.5
+2017,2016,"DC7","SEFL","Middle","UNKS",32,8,3,0.375
+2017,2016,"DC8","SEFL","Nearshore","Other",32,8,2,0.25
+2017,2016,"DC8","SEFL","Nearshore","PORI",32,8,5,0.625
+2017,2016,"DC8","SEFL","Nearshore","SIDE",32,8,17,2.125
+2017,2016,"DC8","SEFL","Nearshore","UNKS",32,8,4,0.5
+2017,2016,"Dustan Rocks","MK","P","FAVI",32,8,6,0.75
+2017,2016,"Dustan Rocks","MK","P","Other",32,8,5,0.625
+2017,2016,"Dustan Rocks","MK","P","PORI",32,8,29,3.625
+2017,2016,"Dustan Rocks","MK","P","SIDE",32,8,39,4.875
+2017,2016,"Molasses Deep","UK","OD","AGAR",32,8,18,2.25
+2017,2016,"Molasses Deep","UK","OD","FAVI",32,8,6,0.75
+2017,2016,"Molasses Deep","UK","OD","Other",32,8,3,0.375
+2017,2016,"Molasses Deep","UK","OD","PORI",32,8,45,5.625
+2017,2016,"Molasses Deep","UK","OD","SIDE",32,8,29,3.625
+2017,2016,"Molasses Deep","UK","OD","UNKS",32,8,1,0.125
+2017,2016,"Molasses Shallow","UK","OS","AGAR",32,8,33,4.125
+2017,2016,"Molasses Shallow","UK","OS","FAVI",32,8,1,0.125
+2017,2016,"Molasses Shallow","UK","OS","Other",32,8,2,0.25
+2017,2016,"Molasses Shallow","UK","OS","PORI",32,8,29,3.625
+2017,2016,"Molasses Shallow","UK","OS","SIDE",32,8,14,1.75
+2017,2016,"Porter Patch","UK","P","FAVI",32,8,2,0.25
+2017,2016,"Porter Patch","UK","P","Other",32,8,3,0.375
+2017,2016,"Porter Patch","UK","P","PORI",32,8,16,2
+2017,2016,"Porter Patch","UK","P","SIDE",32,8,27,3.375
+2017,2016,"Porter Patch","UK","P","UNKS",32,8,1,0.125
+2017,2016,"Red Dun Reef","LK","P","AGAR",32,8,3,0.375
+2017,2016,"Red Dun Reef","LK","P","FAVI",32,8,8,1
+2017,2016,"Red Dun Reef","LK","P","Other",32,8,55,6.875
+2017,2016,"Red Dun Reef","LK","P","PORI",32,8,45,5.625
+2017,2016,"Red Dun Reef","LK","P","SIDE",32,8,135,16.875
+2017,2016,"Red Dun Reef","LK","P","UNKS",32,8,3,0.375
+2017,2016,"Sand Key Deep","LK","OD","AGAR",32,8,3,0.375
+2017,2016,"Sand Key Deep","LK","OD","FAVI",32,8,9,1.125
+2017,2016,"Sand Key Deep","LK","OD","Other",32,8,11,1.375
+2017,2016,"Sand Key Deep","LK","OD","PORI",32,8,21,2.625
+2017,2016,"Sand Key Deep","LK","OD","SIDE",32,8,59,7.375
+2017,2016,"Sand Key Deep","LK","OD","UNKS",32,8,3,0.375
+2017,2016,"Sand Key Shallow","LK","OS","AGAR",32,8,16,2
+2017,2016,"Sand Key Shallow","LK","OS","Other",32,8,4,0.5
+2017,2016,"Sand Key Shallow","LK","OS","PORI",32,8,88,11
+2017,2016,"Sand Key Shallow","LK","OS","SIDE",32,8,31,3.875
+2017,2016,"Sand Key Shallow","LK","OS","UNKS",32,8,2,0.25
+2017,2016,"Sombrero Deep","MK","OD","AGAR",32,8,20,2.5
+2017,2016,"Sombrero Deep","MK","OD","FAVI",32,8,13,1.625
+2017,2016,"Sombrero Deep","MK","OD","Other",32,8,42,5.25
+2017,2016,"Sombrero Deep","MK","OD","PORI",32,8,35,4.375
+2017,2016,"Sombrero Deep","MK","OD","SIDE",32,8,184,23
+2017,2016,"Sombrero Deep","MK","OD","UNKS",32,8,5,0.625
+2017,2016,"Sombrero Shallow","MK","OS","AGAR",32,8,22,2.75
+2017,2016,"Sombrero Shallow","MK","OS","FAVI",32,8,1,0.125
+2017,2016,"Sombrero Shallow","MK","OS","Other",32,8,2,0.25
+2017,2016,"Sombrero Shallow","MK","OS","PORI",32,8,13,1.625
+2017,2016,"Sombrero Shallow","MK","OS","SIDE",32,8,18,2.25
+2017,2016,"Sombrero Shallow","MK","OS","UNKS",32,8,1,0.125
+2017,2016,"Tennessee Deep","MK","OD","AGAR",32,8,11,1.375
+2017,2016,"Tennessee Deep","MK","OD","FAVI",32,8,8,1
+2017,2016,"Tennessee Deep","MK","OD","Other",32,8,24,3
+2017,2016,"Tennessee Deep","MK","OD","PORI",32,8,34,4.25
+2017,2016,"Tennessee Deep","MK","OD","SIDE",32,8,74,9.25
+2017,2016,"Tennessee Deep","MK","OD","UNKS",32,8,4,0.5
+2017,2016,"Tennessee Shallow","MK","OS","AGAR",32,8,2,0.25
+2017,2016,"Tennessee Shallow","MK","OS","FAVI",32,8,12,1.5
+2017,2016,"Tennessee Shallow","MK","OS","Other",32,8,15,1.875
+2017,2016,"Tennessee Shallow","MK","OS","PORI",32,8,50,6.25
+2017,2016,"Tennessee Shallow","MK","OS","SIDE",32,8,45,5.625
+2017,2016,"West Turtle Shoal","MK","P","AGAR",32,8,10,1.25
+2017,2016,"West Turtle Shoal","MK","P","FAVI",32,8,8,1
+2017,2016,"West Turtle Shoal","MK","P","Other",32,8,19,2.375
+2017,2016,"West Turtle Shoal","MK","P","PORI",32,8,73,9.125
+2017,2016,"West Turtle Shoal","MK","P","SIDE",32,8,72,9
+2017,2016,"West Turtle Shoal","MK","P","UNKS",32,8,2,0.25
+2017,2016,"West Washerwoman","LK","P","AGAR",32,8,2,0.25
+2017,2016,"West Washerwoman","LK","P","FAVI",32,8,3,0.375
+2017,2016,"West Washerwoman","LK","P","Other",32,8,28,3.5
+2017,2016,"West Washerwoman","LK","P","PORI",32,8,66,8.25
+2017,2016,"West Washerwoman","LK","P","SIDE",32,8,91,11.375
+2017,2016,"West Washerwoman","LK","P","UNKS",32,8,1,0.125
+2017,2016,"Western Sambo Deep","LK","OD","AGAR",32,8,10,1.25
+2017,2016,"Western Sambo Deep","LK","OD","FAVI",32,8,8,1
+2017,2016,"Western Sambo Deep","LK","OD","Other",32,8,30,3.75
+2017,2016,"Western Sambo Deep","LK","OD","PORI",32,8,35,4.375
+2017,2016,"Western Sambo Deep","LK","OD","SIDE",32,8,143,17.875
+2017,2016,"Western Sambo Deep","LK","OD","UNKS",32,8,1,0.125
+2017,2016,"Western Sambo Shallow","LK","OS","AGAR",32,8,27,3.375
+2017,2016,"Western Sambo Shallow","LK","OS","FAVI",32,8,8,1
+2017,2016,"Western Sambo Shallow","LK","OS","Other",32,8,2,0.25
+2017,2016,"Western Sambo Shallow","LK","OS","PORI",32,8,64,8
+2017,2016,"Western Sambo Shallow","LK","OS","SIDE",32,8,20,2.5
