@@ -1,7 +1,7 @@
 rm(list = ls())
 
 #install.packages("librarian")
-librarian::shelf(here, janitor, lubridate, tidyverse, ggplot2, vegan)
+librarian::shelf(here, janitor, lubridate, tidyverse, ggplot2, vegan, ggpubr)
 
 #### ADULT DENSITIES ####
 adult <- read.csv(here::here("clean_data", "coral_density_clean.csv"))
@@ -74,13 +74,21 @@ adult_species_scores$species <- rownames(adult_species_scores)
                  level = 0.95) +
     labs(title = "a.", colour = "Year", shape = "Region", linetype = "Region") +
     theme_bw() + 
+    scale_colour_manual(values = c("2016" = "#f77976",
+                                   "2017" = "#9336fd") ) +
+    guides(colour = guide_legend(title.position = "top"),
+           shape = guide_legend(title.position = "top")) +
     theme(axis.title.x = element_text(size=18), 
           axis.title.y = element_text(size=18), 
-          plot.title = element_text(size = 18),
+          plot.title = element_text(size=20), 
+          strip.text.x = element_text(size = 25),
+          panel.background = element_blank(), 
           panel.grid.major = element_blank(),  #remove major-grid labels
           panel.grid.minor = element_blank(),  #remove minor-grid labels
           legend.position = 'bottom', # move legend to bottom
-          legend.box.background = element_rect(colour = "black")) 
+          legend.title = element_text(size = 25, hjust = 0.5),
+          legend.text = element_text(size = 24)
+    ) 
 )
 
 #### RECRUITS ####
@@ -161,13 +169,21 @@ recruit_species_scores$species <- rownames(recruit_species_scores)
                  level = 0.95) +
     labs(title = "b.", colour = "Year", shape = "Region", linetype = "Region") +
     theme_bw() + 
+    scale_colour_manual(values = c("2016" = "#f77976",
+                                   "2017" = "#9336fd") ) +
+    guides(colour = guide_legend(title.position = "top"),
+           shape = guide_legend(title.position = "top")) +
     theme(axis.title.x = element_text(size=18), 
           axis.title.y = element_text(size=18), 
+          plot.title = element_text(size=20), 
           strip.text.x = element_text(size = 25),
+          panel.background = element_blank(), 
           panel.grid.major = element_blank(),  #remove major-grid labels
           panel.grid.minor = element_blank(),  #remove minor-grid labels
           legend.position = 'bottom', # move legend to bottom
-          legend.box.background = element_rect(colour = "black")) 
+          legend.title = element_text(size = 25, hjust = 0.5),
+          legend.text = element_text(size = 24)
+    ) 
 )
 
 #### JUVENILES ####
@@ -241,12 +257,30 @@ juv_species_scores$species <- rownames(juv_species_scores)
                  level = 0.95) +
     labs(title = "c.", colour = "Year", shape = "Region", linetype = "Region") +
     theme_bw() + 
+    scale_colour_manual(values = c("2016" = "#f77976",
+                                   "2017" = "#9336fd") ) +
+    guides(colour = guide_legend(title.position = "top"),
+           shape = guide_legend(title.position = "top")) +
     theme(axis.title.x = element_text(size=18), 
           axis.title.y = element_text(size=18), 
+          plot.title = element_text(size=20), 
           strip.text.x = element_text(size = 25),
+          panel.background = element_blank(), 
           panel.grid.major = element_blank(),  #remove major-grid labels
           panel.grid.minor = element_blank(),  #remove minor-grid labels
           legend.position = 'bottom', # move legend to bottom
-          legend.box.background = element_rect(colour = "black")) 
+          legend.title = element_text(size = 25, hjust = 0.5),
+          legend.text = element_text(size = 24)
+    ) 
 )
+
+#### PANEL GRAPH ####
+(nmds_panel <- ggarrange(adult_nmds_plot, recruit_nmds_plot, juv_nmds_plot,
+                         nrow = 1, ncol = 3, widths = c(1,1,1),
+                         common.legend = T, legend = "bottom")
+)
+
+# ggsave(filename = "output/nmds_panel.png", nmds_panel,
+#        width = 16, height = 6, dpi = "retina")
+
 
