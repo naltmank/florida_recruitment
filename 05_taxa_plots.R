@@ -9,43 +9,57 @@ juv_table <- read.csv(here::here("summary_tables", "juv_glmm_effects.csv"))
 
 # filter to anomalies, add significance columns
 rec_sub <- rec_table %>%
-  filter(str_detect(term, "_dev")) %>%
+  filter(str_detect(term, "_dev"),
+         taxa != "OCTO") %>%
   mutate(significance = case_when(p.value < 0.05 ~ "P < 0.05",
                                   T ~ "P > 0.05"))
 
 juv_sub <- juv_table %>%
-  filter(str_detect(term, "_dev")) %>%
+  filter(str_detect(term, "_dev"),
+         taxa != "OCTO") %>%
   mutate(significance = case_when(p.value < 0.05 ~ "P < 0.05",
                                   T ~ "P > 0.05"))
 
 #### PLOT ####
 okabe_ito <- c(
-  "adult_density_log_dev" = "#33a8c7",  
+  "adult_density_log_dev" = "#000080", 
+  "recruit_density_log_dev" = "#33a8c7", 
   "macroalgae_sqrt_dev" = "#a0e426",  
-  "depth_dev" = "#F0E442",  
+  "depth_dev" = "yellow4",  
   "sst_mean_dev" = "#ffab00",  
-  "dhw_low_dev" = "#f050ae",  
+  "dhw_log_dev" = "#f050ae",  
   "kd_log_dev" = "#d883ff"
+)
+
+legend_order <- c(
+  "adult_density_log_dev",
+  "recruit_density_log_dev",
+  "macroalgae_sqrt_dev",
+  "depth_dev",
+  "sst_mean_dev",
+  "dhw_log_dev",
+  "kd_log_dev"
 )
 
 (rec_plot <- 
    ggplot() +
-   geom_point(data = rec_sub, aes(x = estimate, y = taxa, colour = term, shape = significance),
+   geom_point(data = rec_sub, aes(x = estimate, y = taxa, colour = factor(term, levels = legend_order), shape = significance),
               position = position_dodge(0.5), size = 4) +
    geom_errorbar(data = rec_sub, aes(xmin = conf.low, xmax = conf.high,
-                                     y = taxa, colour = term, linetype = significance),
+                                     y = taxa, colour = factor(term, levels = legend_order),
+                                     linetype = significance),
                  width = 0.1, position = position_dodge(0.5)) +
-   scale_y_discrete(limits = c("OCTO", "SIDE", "PORI", "FAVI", "AGAR")) +
+   scale_y_discrete(limits = c("SIDE", "PORI", "FAVI", "AGAR")) +
    geom_vline(xintercept = 0, linetype = 2) +
    scale_shape_manual(values = c("P < 0.05" = 19,
                                  "P > 0.05" = 1)) + 
    scale_colour_manual(values = okabe_ito,
                        labels = c(
-                         "adult_density_log_dev" = "Coral density",  
+                         "adult_density_log_dev" = "Adult corals",  
                          "macroalgae_sqrt_dev" = "Macroalgal cover",  
                          "depth_dev" = "Depth",  
                          "sst_mean_dev" = "Mean SST",  
-                         "dhw_low_dev" = "DHW",  
+                         "dhw_log_dev" = "DHW",  
                          "kd_log_dev" = "Turbidity"
                        )
    ) +
@@ -68,10 +82,12 @@ okabe_ito <- c(
 
 (juv_plot <- 
     ggplot() +
-    geom_point(data = juv_sub, aes(x = estimate, y = taxa, colour = term, shape = significance),
+    geom_point(data = juv_sub, aes(x = estimate, y = taxa, colour = factor(term, levels = legend_order),
+                                   shape = significance),
                position = position_dodge(0.5), size = 4) +
     geom_errorbar(data = juv_sub, aes(xmin = conf.low, xmax = conf.high,
-                                      y = taxa, colour = term, linetype = significance),
+                                      y = taxa, colour = factor(term, levels = legend_order),
+                                      linetype = significance),
                   width = 0.1, position = position_dodge(0.5)) +
     scale_y_discrete(limits = c("SIDE", "PORI", "FAVI", "AGAR")) +
     geom_vline(xintercept = 0, linetype = 2) +
@@ -80,12 +96,22 @@ okabe_ito <- c(
     scale_linetype_manual(values = c("P < 0.05" = 1,
                                     "P > 0.05" = 2)) +
     scale_colour_manual(values = okabe_ito,
+                        breaks = c(
+                          "adult_density_log_dev",
+                          "recruit_density_log_dev",
+                          "macroalgae_sqrt_dev",
+                          "depth_dev",
+                          "sst_mean_dev",
+                          "dhw_log_dev",
+                          "kd_log_dev"
+                        ),
                         labels = c(
-                          "recruit_density_log_dev" = "Coral density",  
+                          "adult_density_log_dev" = "Adult corals", 
+                          "recruit_density_log_dev" = "Coral recruits",  
                           "macroalgae_sqrt_dev" = "Macroalgal cover",  
                           "depth_dev" = "Depth",  
                           "sst_mean_dev" = "Mean SST",  
-                          "dhw_low_dev" = "DHW",  
+                          "dhw_log_dev" = "DHW",  
                           "kd_log_dev" = "Turbidity"
                         )
     ) + 
@@ -106,7 +132,8 @@ okabe_ito <- c(
 
 # combine
 (taxa_panel <- ggarrange(rec_plot, juv_plot, nrow = 1, ncol = 2, widths = c(1,1),
-                         common.legend = T, legend = "right")
+                         common.legend = T, legend.grob = get_legend(juv_plot),
+                         legend = "right")
 )
 
 # ggsave(filename = "output/taxa_panel.png", taxa_panel,

@@ -1,0 +1,3 @@
+"Response","family","link","method","Marginal","Conditional"
+"recruit_density_log_dev","gaussian","identity","none",0.26,0.57
+"juv_density_log","gaussian","identity","none",0.78,0.89

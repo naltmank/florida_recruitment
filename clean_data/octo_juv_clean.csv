@@ -1,0 +1,61 @@
+"recruit_year","cover_year","site_name","region","habitat","total_quadrats","quadrat_area","abundance","density"
+2016,2015,"Admiral","UK","P",32,8,88,11
+2016,2015,"BC1","SEFL","Nearshore",32,8,89,11.125
+2016,2015,"BC2","SEFL","Middle",32,8,137,17.125
+2016,2015,"BC3","SEFL","Outer",32,8,112,14
+2016,2015,"BC4","SEFL","Inner",32,8,113,14.125
+2016,2015,"Carysfort Deep","UK","OD",32,8,59,7.375
+2016,2015,"Carysfort Shallow","UK","OS",32,8,104,13
+2016,2015,"DC1","SEFL","Inner",32,8,57,7.125
+2016,2015,"DC2","SEFL","Middle",32,8,64,8
+2016,2015,"DC3","SEFL","Outer",32,8,43,5.375
+2016,2015,"DC4","SEFL","Outer",32,8,78,9.75
+2016,2015,"DC5","SEFL","Inner",32,8,35,4.375
+2016,2015,"DC6","SEFL","Nearshore",32,8,69,8.625
+2016,2015,"DC7","SEFL","Middle",32,8,56,7
+2016,2015,"DC8","SEFL","Nearshore",32,8,116,14.5
+2016,2015,"Dustan Rocks","MK","P",32,8,59,7.375
+2016,2015,"Molasses Deep","UK","OD",32,8,105,13.125
+2016,2015,"Molasses Shallow","UK","OS",32,8,145,18.125
+2016,2015,"Porter Patch","UK","P",32,8,106,13.25
+2016,2015,"Red Dun Reef","LK","P",32,8,24,3
+2016,2015,"Sand Key Deep","LK","OD",32,8,183,22.875
+2016,2015,"Sand Key Shallow","LK","OS",32,8,62,7.75
+2016,2015,"Sombrero Deep","MK","OD",32,8,96,12
+2016,2015,"Sombrero Shallow","MK","OS",32,8,41,5.125
+2016,2015,"Tennessee Deep","MK","OD",32,8,35,4.375
+2016,2015,"Tennessee Shallow","MK","OS",32,8,158,19.75
+2016,2015,"West Turtle Shoal","MK","P",32,8,50,6.25
+2016,2015,"West Washerwoman","LK","P",32,8,14,1.75
+2016,2015,"Western Sambo Deep","LK","OD",32,8,77,9.625
+2016,2015,"Western Sambo Shallow","LK","OS",32,8,23,2.875
+2017,2016,"Admiral","UK","P",32,8,134,16.75
+2017,2016,"BC1","SEFL","Nearshore",31,7.75,47,6.06451612903226
+2017,2016,"BC2","SEFL","Middle",32,8,148,18.5
+2017,2016,"BC3","SEFL","Outer",32,8,114,14.25
+2017,2016,"BC4","SEFL","Inner",32,8,123,15.375
+2017,2016,"Carysfort Deep","UK","OD",32,8,132,16.5
+2017,2016,"Carysfort Shallow","UK","OS",32,8,284,35.5
+2017,2016,"DC1","SEFL","Inner",32,8,45,5.625
+2017,2016,"DC2","SEFL","Middle",32,8,98,12.25
+2017,2016,"DC3","SEFL","Outer",32,8,54,6.75
+2017,2016,"DC4","SEFL","Outer",32,8,67,8.375
+2017,2016,"DC5","SEFL","Inner",32,8,62,7.75
+2017,2016,"DC6","SEFL","Nearshore",32,8,40,5
+2017,2016,"DC7","SEFL","Middle",32,8,47,5.875
+2017,2016,"DC8","SEFL","Nearshore",32,8,177,22.125
+2017,2016,"Dustan Rocks","MK","P",32,8,72,9
+2017,2016,"Molasses Deep","UK","OD",32,8,327,40.875
+2017,2016,"Molasses Shallow","UK","OS",32,8,336,42
+2017,2016,"Porter Patch","UK","P",32,8,92,11.5
+2017,2016,"Red Dun Reef","LK","P",32,8,36,4.5
+2017,2016,"Sand Key Deep","LK","OD",32,8,491,61.375
+2017,2016,"Sand Key Shallow","LK","OS",32,8,121,15.125
+2017,2016,"Sombrero Deep","MK","OD",32,8,90,11.25
+2017,2016,"Sombrero Shallow","MK","OS",32,8,44,5.5
+2017,2016,"Tennessee Deep","MK","OD",32,8,52,6.5
+2017,2016,"Tennessee Shallow","MK","OS",32,8,208,26
+2017,2016,"West Turtle Shoal","MK","P",32,8,95,11.875
+2017,2016,"West Washerwoman","LK","P",32,8,5,0.625
+2017,2016,"Western Sambo Deep","LK","OD",32,8,168,21
+2017,2016,"Western Sambo Shallow","LK","OS",32,8,39,4.875

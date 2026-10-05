@@ -1,0 +1,3 @@
+"Independ.Claim","Test.Type","DF","Crit.Value","P.Value",""
+"juv_density_log ~ adult_density_log_region + ...","coef",19,1.2272,0.2347,""
+"juv_density_log ~ adult_density_log_dev + ...","coef",19,2.2765,0.0346,"*"

@@ -4,7 +4,63 @@ rm(list = ls())
 librarian::shelf(here, janitor, lubridate, tidyverse, ggplot2)
 
 
-#### RECRUIT DATA ####
+#### LIVE RECRUIT DATA ####
+# read data
+live_recruit_raw <- read.csv(here::here("raw_data", "live_recruits.csv"))
+
+#  "Red Dun" should be "Red Dun Reef" 
+#  "Admiral Patch" should be "Admiral" 
+# "West Turtle Shoals" should be "West Turtle Shoal"
+
+live_recruit_corr <- live_recruit_raw %>%
+  # rename year to live_recruit_year for future merges
+  rename(recruit_year = year) %>%
+  mutate(site_name = case_when(
+    site_name == "Red Dun" ~ "Red Dun Reef",
+    site_name == "Admiral Patch" ~ "Admiral",
+    site_name == "West Turtle Shoals" ~ "West Turtle Shoal",
+    T ~ site_name
+  ),
+  # add year that links to benthic cover data - previous year's cover influences live_recruits
+  cover_year = recruit_year - 1
+  # juvenile year now the same as live_recruit year - Sep 21
+    ) %>%
+  # some tiles were scored even though they were partially destroyed in a hurricane
+  group_by(recruit_year, site_name, tile_id) %>%
+  # if a site does not have all sides, mark it as complete ~ FALSE
+  mutate(
+    complete = all(c("Bottom", "Top") %in% side)
+  ) %>%
+  ungroup() %>%
+  # create a new column indicating the number of complete tiles in a given site/year
+  group_by(recruit_year, site_name) %>%
+  mutate(
+    total_tiles = n_distinct(tile_id[complete])
+  ) %>%
+  ungroup() %>%
+  # filter out incomplete tiles and the last year of live_recruits data (no corresponding juv data)
+  filter(complete == TRUE,
+         recruit_year != 2018) %>%
+  # add a total area column
+  mutate(tile_area = total_tiles * # for all tiles in a site
+           (2*(0.15^2 - pi*(0.064/2)^2)  # 2 15x15 surfaces each with a 0.64 cm diameter screw in it
+              )) # no sides for live recruits
+
+
+
+# aggregate to site level
+live_recruit_sum <- live_recruit_corr %>%
+  group_by(recruit_year, cover_year, site_name, total_tiles, tile_area, taxa) %>%
+  summarise(abundance = sum(count, na.rm = T)) %>%
+  mutate(live_recruit_density = abundance/tile_area) %>%
+  ungroup()
+  
+
+# write data
+# write.csv(live_recruit_sum, "clean_data/live_recruits_clean.csv", row.names = F)
+
+
+#### DEAD RECRUIT DATA ####
 # read data
 recruit_raw <- read.csv(here::here("raw_data", "recruit_data.csv"))
 
@@ -24,7 +80,7 @@ recruit_corr <- recruit_raw %>%
   # add year that links to benthic cover data - previous year's cover influences recruits
   cover_year = recruit_year - 1
   # juvenile year now the same as recruit year - Sep 21
-    ) %>%
+  ) %>%
   # some tiles were scored even though they were partially destroyed in a hurricane
   group_by(recruit_year, Site, Tile) %>%
   # if a site does not have all sides, mark it as complete ~ FALSE
@@ -59,7 +115,7 @@ recruit_sum <- recruit_corr %>%
 # pivot long
 recruit_long <- recruit_sum %>%
   pivot_longer(cols = c("AGAR", "FAVI", "PORI", "SIDE", "Other", "UNKS",
-                         "TotalSto", "TotalOct", "TotalCor"),
+                        "TotalSto", "TotalOct", "TotalCor"),
                names_to = "taxa",
                values_to = "abundance") %>%
   mutate(density = abundance/tile_area) %>%
@@ -67,6 +123,7 @@ recruit_long <- recruit_sum %>%
 
 # write data
 # write.csv(recruit_long, "clean_data/recruits_clean.csv", row.names = F)
+
 
 #### JUVENILE DATA ####
 juv_raw <- read.csv(here::here("raw_data", "juv_data.csv"))
@@ -357,6 +414,39 @@ setdiff( unique(comb_oct$site_name), sites)
 
 # write data
 # write.csv(comb_oct, "clean_data/adult_octo_density_clean.csv", row.names = F)
+
+#### OCTO JUVENILE DATA ####
+octo_juv <- read.csv(here::here("raw_data", "octo_juv_data.csv"))
+
+octo_juv_sub <- octo_juv %>%
+  filter(Project_Year %in% c(2016, 2017), # octo_juveniles linked to one year after recruit data
+         Site_Name %in% sites) %>%
+  mutate(cover_year = Project_Year - 1) %>% # for linking to cover data
+  rename(recruit_year = Project_Year) %>% # project year is the same as recruits now - not exactly 1 year later
+  group_by(recruit_year, Site_Name) %>%
+  mutate(
+    total_quadrats = n_distinct(Quadrat),
+    complete = total_quadrats == 32,
+    # one quadrat missing from BC1 in 2017 - need to account for this in area (0.25 m2 quads)
+    quadrat_area = total_quadrats * 0.25
+  ) %>%
+  ungroup() 
+
+# check all sites accounted for
+setdiff(unique(octo_juv_sub$Site_Name), sites)
+setdiff(sites, unique(octo_juv_sub$Site_Name)) 
+
+# aggregate to site level
+octo_juv_long <- octo_juv_sub %>%
+  group_by(recruit_year, cover_year, Site_Name, Region, Habitat, total_quadrats, quadrat_area) %>%
+  summarise(abundance = sum(Octo, na.rm = T),
+            .groups = "drop") %>%
+  mutate(density = abundance/quadrat_area) %>%
+  rename(site_name = Site_Name,
+         region = Region,
+         habitat = Habitat)
+# write data
+# write.csv(octo_juv_long, "clean_data/octo_juv_clean.csv", row.names = F)
 
 #### ENVIRONMENTAL DATA ####
 # clean and combine erddap and depth data

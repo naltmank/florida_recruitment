@@ -1,13 +1,16 @@
 rm(list = ls())
 #install.packages("librarian")
-librarian::shelf(here, janitor, lubridate, tidyverse, ggplot2, glmmTMB, performance, DHARMa,
+librarian::shelf(here, janitor, lubridate, tidyverse, ggplot2, nlme, performance, DHARMa,
                  car, broom.mixed)
 
 #### FUNCTIONS ####
-gmc_data <- function(df) {
+gmc_data <- function(df, # dataframe to pass the function to
+                     timevar = study_year, # for if sites were surveyed more than one year
+                     spatial_group = region # the spatial grouping for setting regional means
+) {  
   df %>%
     # in each year, take the regional mean
-    group_by(study_year, region) %>%
+    group_by({{ timevar }}, {{ spatial_group }}) %>%
     mutate(
       across(
         # do this for all the variables that are treated as explanatory variables
@@ -48,7 +51,10 @@ recruit <- read.csv(here::here("clean_data", "recruits_clean.csv"))
 adult_rec_sub <- adult_full %>%
   filter(!taxa %in% c("Other", "UNKS")) %>%
   rename(adult_density = density) %>%
-  mutate(study_year = as.factor(recruit_year)) %>%
+  mutate(study_year = as.factor(recruit_year),
+         adult_density = case_when(taxa != "OCTO" ~  adult_density*10E-04, # convert LTA to m2
+                                   T ~ adult_density) # leave octocorals the same
+         ) %>% 
   select(-c(cover_year, recruit_year)) %>%
   mutate(adult_density_log = log(adult_density + 1))
 
@@ -122,7 +128,6 @@ agar_rec_mod <- nlme::lme(density_log ~
                           data = agar_rec_center)
 summary(agar_rec_mod) # adult density anomaly, sst_mean anomaly sig
 performance::check_model(agar_rec_mod) # all look fine
-Anova(agar_rec_mod) # reflect summary
 # extract effects
 agar_effects <- broom.mixed::tidy(agar_rec_mod, effects = "fixed", conf.int = TRUE) %>%
   dplyr::filter(term != "(Intercept)") %>%
@@ -142,7 +147,6 @@ favi_rec_mod <- nlme::lme(density_log ~
                           data = favi_rec_center)
 summary(favi_rec_mod) 
 performance::check_model(favi_rec_mod) # all look fine
-Anova(favi_rec_mod) # reflect summary
 # extract effects
 favi_effects <- broom.mixed::tidy(favi_rec_mod, effects = "fixed", conf.int = TRUE) %>%
   dplyr::filter(term != "(Intercept)") %>%
@@ -162,7 +166,6 @@ pori_rec_mod <- nlme::lme(density_log ~
                           data = pori_rec_center)
 summary(pori_rec_mod) # adult density anomaly, sst_mean region sig
 performance::check_model(pori_rec_mod) # all look fine
-Anova(pori_rec_mod) # reflect summary
 # extract effects
 pori_effects <- broom.mixed::tidy(pori_rec_mod, effects = "fixed", conf.int = TRUE) %>%
   dplyr::filter(term != "(Intercept)") %>%
@@ -182,7 +185,6 @@ side_rec_mod <- nlme::lme(density_log ~
                           data = side_rec_center)
 summary(side_rec_mod)
 performance::check_model(side_rec_mod) # all look fine
-Anova(side_rec_mod) # reflect summary
 # extract effects
 side_effects <- broom.mixed::tidy(side_rec_mod, effects = "fixed", conf.int = TRUE) %>%
   dplyr::filter(term != "(Intercept)") %>%
@@ -202,7 +204,6 @@ octo_rec_mod <- nlme::lme(density_log ~
                           data = octo_rec_center)
 summary(octo_rec_mod) # depth anomaly,dhw region, sst region sig
 performance::check_model(octo_rec_mod) # all look fine
-Anova(octo_rec_mod) # reflect summary
 # extract effects
 octo_effects <- broom.mixed::tidy(octo_rec_mod, effects = "fixed", conf.int = TRUE) %>%
   dplyr::filter(term != "(Intercept)") %>%

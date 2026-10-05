@@ -1,0 +1,14 @@
+"Response","Predictor","Std.Estimate","DF","Crit.Value","P.Value"
+"recruit_density_log_dev","sst_mean_dev",0.2029,19,1.2732,0.2183
+"recruit_density_log_dev","dhw_log_dev",-0.1807,19,-1.3461,0.1941
+"recruit_density_log_dev","kd_log_dev",-0.5099,19,-2.2175,0.039
+"recruit_density_log_dev","depth_dev",0.0188,24,0.098,0.9228
+"recruit_density_log_dev","adult_density_log_dev",0.5595,19,3.073,0.0063
+"recruit_density_log_dev","macroalgae_sqrt_dev",0.0471,19,0.3529,0.728
+"juv_density_log","sst_mean_dev",0.0046,18,0.0616,0.9515
+"juv_density_log","dhw_log_dev",0.0258,18,0.4683,0.6452
+"juv_density_log","kd_log_dev",-0.0896,18,-0.5099,0.6163
+"juv_density_log","depth_dev",0.1618,24,1.0551,0.3019
+"juv_density_log","recruit_density_log_dev",0.0433,18,0.7594,0.4574
+"juv_density_log","adult_density_log_dev",0.3147,18,2.2717,0.0356
+"juv_density_log","macroalgae_sqrt_dev",-0.0293,18,-0.5383,0.597

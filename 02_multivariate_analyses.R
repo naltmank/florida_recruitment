@@ -193,9 +193,17 @@ juv_sub <- juv %>%
   filter(!taxa %in% c("Other", "UNKS", NA)) %>%
   select(-c(abundance, total_quadrats, quadrat_area))
 
+# add in octocorals
+octo_juv <- read.csv(here::here("clean_data", "octo_juv_clean.csv"))
+octo_juv_sub <- octo_juv %>%
+  mutate(taxa = "OCTO") %>% # add octo taxa ID for merge
+  select(-c(abundance, total_quadrats, quadrat_area))
+
+# combine
+juv_full <- rbind(juv_sub, octo_juv_sub)
 
 # pivot wide
-juv_wide <- juv_sub %>%
+juv_wide <- juv_full %>%
   pivot_wider(names_from = taxa,
               values_from = density,
               values_fill = 0) %>%
@@ -225,17 +233,17 @@ juv_matrix_log <- log(juv_matrix + 1)
 adonis2(juv_matrix_log ~ study_year*design, method = "bray", by = "terms",
         data = juv_wide)
 # Df SumOfSqs      R2       F Pr(>F)    
-# study_year         1   0.0265 0.00547  0.4338  0.743    
-# design             1   1.3725 0.28315 22.4621  0.001 ***
-#   study_year:design  1   0.0264 0.00545  0.4323  0.748    
-# Residual          56   3.4218 0.70593                   
-# Total             59   4.8472 1.00000 
+# study_year         1  0.02648 0.01032  0.8124  0.502    
+# design             1  0.69911 0.27250 21.4470  0.001 ***
+#   study_year:design  1  0.01448 0.00565  0.4443  0.722    
+# Residual          56  1.82544 0.71153                   
+# Total             59  2.56552 1.00000                   
 
 
 # run ordination
 set.seed(1032)
-juv_ord2 <- metaMDS(juv_matrix_log, distance = "bray", k = 2, maxit = 999, trymax = 999) # 0.13
-juv_ord3 <- metaMDS(juv_matrix_log, distance = "bray", k = 3, maxit = 999, trymax = 999) # 0.08
+juv_ord2 <- metaMDS(juv_matrix_log, distance = "bray", k = 2, maxit = 999, trymax = 999) # 0.17
+juv_ord3 <- metaMDS(juv_matrix_log, distance = "bray", k = 3, maxit = 999, trymax = 999) # 0.10
 
 
 juv_site_scores <- as.data.frame(scores(juv_ord3, "sites"))
