@@ -1,23 +1,16 @@
-# florida_recruitment
-Drivers of coral recruitment in Florida
+# Florida adult, recruit, and juvenile coral dynamics
+Understanding the drivers of coral recruits and bottlenecks for succesful transitions to the juvenile stage.
 
-From notes with Leah on May 20-21 teams convo:
-the main questions here are:
-1) what are the drivers of coral recruit density? <-- live coral tissue, temp,...?
-2) does coral recruit density predict juvenile coral density and community composition?
+Repo must be cloned as a .Rproj in order for pathing to work correctly. 
 
-more trying look at the pipeline of adults -> recruits -> juveniles and additional benthic competitors that could create bottlenecks between the recruit and juvenile stages (theoretically - we did not fate track juveniles or recruits)
+# Data
+Data are organized into three folders: raw_data, clean_data, and summary_tables.
 
-so the idea is 
-current_yr - 1 benthic and temp data --> current_yr recruit data --> current_yr + 1 juvenile data?
- 
-where for 2016 recruit data:
-current_yr - 1 = 2015 and current_yr + 1 = 2017
- 
-Leah: i would hypothesize that local larval supply (adult LTA or cover) tends to be more limiting for agaricids and poritids than for siderastreids (we kinda already showed this) but that siderastreids have higher (inferred) survivorship from teh recruit to juvenile stage --> leverage taxon specific LTA, not a multivariate axis, and then if taxonomic, spatial, or year-over-year variation in 'inferred' post settlement survivorship (e.g. recruit to juvenile ratios) can be explained by macroalgae, temperature, etc etc... that would be very satisfying obviously
+raw_data contain the original recruit, juvenile, adult density, and adult living tissue area data prior to any manipulations. They are cleaned and organized into long-form data in the script 01_data_cleaning. The resultant csvs are in the clean_data folder, which are the only ones used for analyses. One could theoretically skip running any of the 01_ script and jump straight to 02_ and fully reproduce all figures and analyses. 
 
-figure 1 is a 3 or 6 panel NMDS with the relevant years of benthic, recruit, and juvenile data, figure 2 is effect sizes for totals, and figure 3 is a panel graph for taxon specific recruit and juvenile densities based on causal inference approaches
+summary_tables contain statistical outputs for creating clean tables (in excel) or as reference for constructing the SEM path diagrams.
 
-figure 2 could be an SEM but if we're doing taxon specific as the main question I don't like the idea of doing 4 SEMs for this
+# Code
+Code is organized in order of the analyses that are being conducted in the manuscript, starting with multivariate analyses, then taxa-level recruit glmms, then taxa-level juvenile glmms, etc. 
 
-Leah: my hope would be to not get too into the weeds with taxa outside those three families because those are where we have a ton of data.  obviously a lot more species show up in the juvenile census so we COULD look at their relationship to the adult community but that's where i'd start worrying about power
+All code uses data from the clean_data folder. glmm and sem scripts output csvs to the summary_tables folder. 
