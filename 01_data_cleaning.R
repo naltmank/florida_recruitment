@@ -169,7 +169,7 @@ juv_long <- juv_sub %>%
          habitat = Habitat,
          taxa = recruit_map)
 # write data
-# write.csv(juv_long, "clean_data/juv_clean.csv", row.names = F)
+# write.csv(juv_long, "clean_data/juv_clean_full.csv", row.names = F)
 
 juv_long_sub <- juv_long %>%
   filter(recruit_year %in% c(2016, 2017))
