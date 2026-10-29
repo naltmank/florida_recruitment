@@ -95,8 +95,7 @@ recruit_corr <- recruit_raw %>%
   ) %>%
   ungroup() %>%
   # filter out incomplete tiles and the last year of recruits data (no corresponding juv data)
-  filter(complete == TRUE,
-         recruit_year != 2018) %>%
+  filter(complete == TRUE) %>%
   # add a total area column
   mutate(tile_area = total_tiles * # for all tiles in a site
            (2*(0.15^2 - pi*(0.064/2)^2) + # 2 15x15 surfaces each with a 0.64 cm diameter screw in it
@@ -122,7 +121,12 @@ recruit_long <- recruit_sum %>%
   rename(site_name = Site)
 
 # write data
-# write.csv(recruit_long, "clean_data/recruits_clean.csv", row.names = F)
+# write.csv(recruit_long, "clean_data/recruits_clean_full.csv", row.names = F)
+
+recruit_long_sub <- recruit_long %>%
+  filter(recruit_year != 2018)
+
+# write.csv(recruit_long_sub, "clean_data/recruits_clean.csv", row.names = F)
 
 
 #### JUVENILE DATA ####
@@ -133,7 +137,7 @@ juv_map <- read.csv(here::here("raw_data", "juv_id_map.csv")) %>%
 
 # subset according to years and sites
 juv_sub <- juv_raw %>%
-  filter(Project_Year %in% c(2016, 2017), # juveniles linked to one year after recruit data
+  filter(
          Site_Name %in% sites) %>%
   mutate(cover_year = Project_Year - 1) %>% # for linking to cover data
   rename(recruit_year = Project_Year) %>% # project year is the same as recruits now - not exactly 1 year later
@@ -165,6 +169,10 @@ juv_long <- juv_sub %>%
          habitat = Habitat,
          taxa = recruit_map)
 # write data
+# write.csv(juv_long, "clean_data/juv_clean.csv", row.names = F)
+
+juv_long_sub <- juv_long %>%
+  filter(recruit_year %in% c(2016, 2017))
 # write.csv(juv_long, "clean_data/juv_clean.csv", row.names = F)
 
 #### LTA DATA ####
@@ -305,8 +313,7 @@ cremp_density_sub <- cremp_density_raw %>%
     Site_name == "West Washer Women" ~ "West Washerwoman",
     T ~ Site_name
   )) %>%
-  filter(Site_name %in% sites,
-         Year %in% c(2015, 2016)) %>%
+  filter(Site_name %in% sites) %>%
   mutate(recruit_year = Year + 1
   ) %>%
   rename(cover_year = Year)
@@ -329,8 +336,7 @@ secremp_density_sub <- secremp_density_raw %>%
     Site_name == "Dade County 8" ~ "DC8",
     T ~ Site_name
   ) ) %>%
-  filter(Site_name %in% sites,
-         Year %in% c(2015, 2016)) %>%
+  filter(Site_name %in% sites) %>%
   mutate(recruit_year = Year + 1
   ) %>%
   rename(cover_year = Year) %>%
@@ -369,10 +375,15 @@ secremp_density_long <- secremp_density_sub %>%
          taxa = recruit_map) %>%
   filter(!is.na(taxa)) # millepora listed as NA - filter those out
 
-comb_density_long <- rbind(cremp_density_long, secremp_density_long)
+comb_density_long <- rbind(cremp_density_long, secremp_density_long) %>%
+  filter(cover_year %in% 2014:2017)
 
 # write data
-# write.csv(comb_density_long, "clean_data/coral_density_clean.csv", row.names = F)
+# write.csv(comb_density_long, "clean_data/coral_density_clean_full.csv", row.names = F)
+
+comb_density_long_sub <- comb_density_long %>%
+  filter(recruit_year %in% 2016:2017)
+# write.csv(comb_density_long_sub, "clean_data/coral_density_clean.csv", row.names = F)
 
 #### OCTOCORAL DENSITY ####
 # octo data are already in terms of density
@@ -403,7 +414,7 @@ secremp_octo_corr <- secremp_octo %>%
 
 comb_oct <- rbind(cremp_octo_corr, secremp_octo_corr) %>%
   filter(site_name %in% sites,
-         year %in% c(2015, 2016)) %>%
+         year %in% 2014:2017) %>%
   mutate(recruit_year = year + 1) %>%
   rename(cover_year = year) %>%
   group_by(cover_year, recruit_year, region, habitat, site_name) %>%
@@ -413,13 +424,17 @@ comb_oct <- rbind(cremp_octo_corr, secremp_octo_corr) %>%
 setdiff( unique(comb_oct$site_name), sites)
 
 # write data
-# write.csv(comb_oct, "clean_data/adult_octo_density_clean.csv", row.names = F)
+# write.csv(comb_oct, "clean_data/adult_octo_density_clean_full.csv", row.names = F)
+
+comb_oct_sub <- comb_oct %>%
+  filter(cover_year %in% 2015:2016)
+# write.csv(comb_oct_sub, "clean_data/adult_octo_density_clean.csv", row.names = F)
 
 #### OCTO JUVENILE DATA ####
 octo_juv <- read.csv(here::here("raw_data", "octo_juv_data.csv"))
 
 octo_juv_sub <- octo_juv %>%
-  filter(Project_Year %in% c(2016, 2017), # octo_juveniles linked to one year after recruit data
+  filter(
          Site_Name %in% sites) %>%
   mutate(cover_year = Project_Year - 1) %>% # for linking to cover data
   rename(recruit_year = Project_Year) %>% # project year is the same as recruits now - not exactly 1 year later
@@ -446,7 +461,11 @@ octo_juv_long <- octo_juv_sub %>%
          region = Region,
          habitat = Habitat)
 # write data
-# write.csv(octo_juv_long, "clean_data/octo_juv_clean.csv", row.names = F)
+# write.csv(octo_juv_long, "clean_data/octo_juv_clean_full.csv", row.names = F)
+
+octo_juv_long_sub <- octo_juv_long %>%
+  filter(recruit_year %in% c(2016, 2017))
+# write.csv(octo_juv_long_sub, "clean_data/octo_juv_clean.csv", row.names = F)
 
 #### ENVIRONMENTAL DATA ####
 # clean and combine erddap and depth data
