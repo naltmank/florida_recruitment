@@ -4,13 +4,13 @@ rm(list = ls())
 librarian::shelf(here, janitor, lubridate, tidyverse, ggplot2, vegan, ggpubr)
 
 #### ADULT DENSITIES ####
-adult <- read.csv(here::here("clean_data", "coral_density_clean.csv"))
-octo <- read.csv(here::here("clean_data", "adult_octo_density_clean.csv")) 
+adult <- read.csv(here::here("clean_data", "coral_density_clean_full.csv"))
+octo <- read.csv(here::here("clean_data", "adult_octo_density_clean_full.csv")) 
 
 # subset octocoral data to only relevant data for merge
 octo_sub <- octo %>%
-  mutate(study_year = as.factor(recruit_year)) %>%
-  select(study_year, site_name, OCTO) 
+  mutate(year = as.factor(cover_year)) %>%
+  select(year, site_name, OCTO) 
 
 # filter out UNKS and Other
 adult_sub <- adult %>%
@@ -21,39 +21,41 @@ adult_wide <- adult_sub %>%
   pivot_wider(names_from = taxa,
               values_from = density) %>%
   # set year to factors
-  mutate(study_year = as.factor(recruit_year), # setting recruit_year as the primary year of interest
-         unique_id = paste0(site_name, "-", study_year),
+  mutate(year = as.factor(cover_year), # setting recruit_year as the primary year of interest
+         unique_id = paste0(site_name, "-", year),
          design = case_when(
            region == "BC" | region == "DC" ~ "SE FL",
            T ~ "FL Keys"
            )) %>%
-  left_join(octo_sub, by = c("study_year", "site_name"))
+  left_join(octo_sub, by = c("year", "site_name"))
 
 # set metadata
 adult_meta <- c("cover_year", "recruit_year", "region", "habitat", "site_name",
-                "study_year", "unique_id", "design")
+                "year", "unique_id", "design")
 
-# subset species matrix
-adult_matrix <- as.matrix(adult_wide[,-which(names(adult_wide) %in% adult_meta)])
-rownames(adult_matrix) <- adult_wide$unique_id
+# subset species matrix and remove missing value from red dunn 2014
+adult_matrix <- as.matrix(na.omit(adult_wide[,-which(names(adult_wide) %in% adult_meta)]))
+rownames(adult_matrix) <- na.omit(adult_wide)$unique_id
+
+
 
 # log transform for skewness
 adult_matrix_log <- log(adult_matrix + 1)
 
 # conduct PERMANOVA
-adonis2(adult_matrix_log ~ study_year*design, method = "bray", by = "terms",
-        data = adult_wide)
+adonis2(adult_matrix_log ~ year*design, method = "bray", by = "terms",
+        data = na.omit(adult_wide))
 # Df SumOfSqs      R2       F Pr(>F)    
-# study_year         1  0.00468 0.00203  0.2088  0.873    
-# design             1  1.04278 0.45221 46.5094  0.001 ***
-#   study_year:design  1  0.00293 0.00127  0.1305  0.911    
-# Residual          56  1.25557 0.54449                   
-# Total             59  2.30595 1.00000  
+# year          3   0.0276 0.00597  0.4072  0.882    
+# design        1   2.0644 0.44647 91.3164  0.001 ***
+#   year:design   3   0.0224 0.00484  0.3300  0.945    
+# Residual    111   2.5094 0.54271                   
+# Total       118   4.6238 1.00000       
 
 
 # run ordination
 set.seed(1032)
-adult_ord2 <- metaMDS(adult_matrix_log, distance = "bray", k = 2, maxit = 999, trymax = 999) # 0.11
+adult_ord2 <- metaMDS(adult_matrix_log, distance = "bray", k = 2, maxit = 999, trymax = 999) # 0.12
 
 adult_site_scores <- as.data.frame(scores(adult_ord2, "sites"))
 adult_site_scores$unique_id <- rownames(adult_site_scores)
@@ -62,20 +64,32 @@ adult_site_scores_full <- adult_site_scores %>%
 
 adult_species_scores <- as.data.frame(scores(adult_ord2, "species"))
 adult_species_scores$species <- rownames(adult_species_scores)
+adult_species_scores <- adult_species_scores %>%
+  mutate(species_fullname = case_when(species == "AGAR" ~ "Agaricidae",
+                                      species == "FAVI" ~ "Faviidae",
+                                      species == "PORI" ~ "Poritidae",
+                                      species == "SIDE" ~ "Siderastridae",
+                                      species == "OCTO" ~ "Octocorallia",
+                                      T ~ species))
 
 # plot
 (adult_nmds_plot <- 
     ggplot() + 
     # add sites
-    geom_point(data= adult_site_scores_full, aes(x=NMDS1,y=NMDS2, colour = study_year, shape = design)) + 
+    geom_point(data= adult_site_scores_full, aes(x=NMDS1,y=NMDS2, colour = year, shape = design)) + 
     # add species
-    geom_text(data = adult_species_scores, aes(x = NMDS1, y = NMDS2, label=species)) +
-    stat_ellipse(data= adult_site_scores_full, aes(x=NMDS1,y=NMDS2, colour = study_year, linetype = design),
+    geom_text(data = adult_species_scores, aes(x = NMDS1, y = NMDS2, label=species_fullname)) +
+    stat_ellipse(data= adult_site_scores_full, aes(x=NMDS1,y=NMDS2, colour = year, linetype = design),
                  level = 0.95) +
     labs(title = "a.", colour = "Year", shape = "Region", linetype = "Region") +
     theme_bw() + 
-    scale_colour_manual(values = c("2016" = "#f77976",
-                                   "2017" = "#9336fd") ) +
+    scale_colour_manual(
+      values = c(
+        "2014" = "#E69F00",
+        "2015" = "#56B4E9",
+        "2016" = "#009E73",
+        "2017" = "#9336fd",
+        "2018" = "#CC79A7") ) +
     guides(colour = guide_legend(title.position = "top"),
            shape = guide_legend(title.position = "top")) +
     theme(axis.title.x = element_text(size=18), 
@@ -92,7 +106,7 @@ adult_species_scores$species <- rownames(adult_species_scores)
 )
 
 #### RECRUITS ####
-recruit <- read.csv(here::here("clean_data", "recruits_clean.csv"))
+recruit <- read.csv(here::here("clean_data", "recruits_clean_full.csv"))
 
 # filter out UNKS, Other, TotalCor, and TotalSto, mutate TotalOct to OCTO
 recruit_sub <- recruit %>%
@@ -103,17 +117,19 @@ recruit_sub <- recruit %>%
 
 # pull out region data from adults df
 region_data <- adult_wide %>%
-  select(region, site_name, study_year)
+  distinct(region, site_name) 
 
 # pivot wide
 recruit_wide <- recruit_sub %>%
+  
   pivot_wider(names_from = taxa,
               values_from = density) %>%
+  left_join(region_data, by = c("site_name") ) %>%
   # set year to factors
-  mutate(study_year = as.factor(recruit_year), # setting recruit_year as the primary year of interest
-         unique_id = paste0(site_name, "-", study_year)
+  mutate(year = as.factor(recruit_year), # setting recruit_year as the primary year of interest
+         unique_id = paste0(site_name, "-", year)
          ) %>%
-  left_join(region_data, by = c("site_name", "study_year") ) %>%
+  
   mutate(
          design = case_when(
            region == "BC" | region == "DC" ~ "SE FL",
@@ -123,7 +139,7 @@ recruit_wide <- recruit_sub %>%
 
 # set metadata
 recruit_meta <- c("cover_year",  "recruit_year", "region", "habitat", "site_name",
-                "study_year", "unique_id", "design")
+                "year", "unique_id", "design")
 
 # subset species matrix
 recruit_matrix <- as.matrix(recruit_wide[,-which(names(recruit_wide) %in% recruit_meta)])
@@ -134,15 +150,14 @@ recruit_matrix_log <- log(recruit_matrix + 1)
 
 # conduct PERMANOVA
 set.seed(1032)
-adonis2(recruit_matrix_log ~ study_year*design, method = "bray", by = "terms",
+adonis2(recruit_matrix_log ~ year*design, method = "bray", by = "terms",
         data = recruit_wide)
-# Df SumOfSqs      R2      F Pr(>F)   
-# study_year         1   0.4295 0.06496 4.2900  0.008 **
-#   design             1   0.4200 0.06353 4.1954  0.008 **
-#   study_year:design  1   0.1556 0.02353 1.5540  0.178   
-# Residual          56   5.6067 0.84798                 
-# Total             59   6.6118 1.00000 
-
+# Df SumOfSqs      R2      F Pr(>F)    
+# year         2   1.6271 0.16527 9.2454  0.001 ***
+#   design       1   0.6944 0.07053 7.8911  0.001 ***
+#   year:design  2   0.1320 0.01341 0.7500  0.645    
+# Residual    84   7.3916 0.75079                  
+# Total       89   9.8451 1.00000     
 
 # run ordination
 set.seed(1032)
@@ -157,20 +172,32 @@ recruit_site_scores_full <- recruit_site_scores %>%
 
 recruit_species_scores <- as.data.frame(scores(recruit_ord3, "species"))
 recruit_species_scores$species <- rownames(recruit_species_scores)
+recruit_species_scores <- recruit_species_scores %>%
+  mutate(species_fullname = case_when(species == "AGAR" ~ "Agaricidae",
+                                      species == "FAVI" ~ "Faviidae",
+                                      species == "PORI" ~ "Poritidae",
+                                      species == "SIDE" ~ "Siderastridae",
+                                      species == "OCTO" ~ "Octocorallia",
+                                      T ~ species))
 
 # plot
 (recruit_nmds_plot <- 
     ggplot() + 
     # add sites
-    geom_point(data= recruit_site_scores_full, aes(x=NMDS1,y=NMDS2, colour = study_year, shape = design)) + 
+    geom_point(data= recruit_site_scores_full, aes(x=NMDS1,y=NMDS2, colour = year, shape = design)) + 
     # add species
-    geom_text(data = recruit_species_scores, aes(x = NMDS1, y = NMDS2, label=species)) +
-    stat_ellipse(data= recruit_site_scores_full, aes(x=NMDS1,y=NMDS2, colour = study_year, linetype = design),
+    geom_text(data = recruit_species_scores, aes(x = NMDS1, y = NMDS2, label=species_fullname)) +
+    stat_ellipse(data= recruit_site_scores_full, aes(x=NMDS1,y=NMDS2, colour = year, linetype = design),
                  level = 0.95) +
     labs(title = "b.", colour = "Year", shape = "Region", linetype = "Region") +
     theme_bw() + 
-    scale_colour_manual(values = c("2016" = "#f77976",
-                                   "2017" = "#9336fd") ) +
+    scale_colour_manual(
+      values = c(
+        "2014" = "#E69F00",
+        "2015" = "#56B4E9",
+        "2016" = "#009E73",
+        "2017" = "#9336fd",
+        "2018" = "#CC79A7") ) +
     guides(colour = guide_legend(title.position = "top"),
            shape = guide_legend(title.position = "top")) +
     theme(axis.title.x = element_text(size=18), 
@@ -187,14 +214,14 @@ recruit_species_scores$species <- rownames(recruit_species_scores)
 )
 
 #### JUVENILES ####
-juv <- read.csv(here::here("clean_data", "juv_clean.csv"))
+juv <- read.csv(here::here("clean_data", "juv_clean_full.csv"))
 
 juv_sub <- juv %>%
   filter(!taxa %in% c("Other", "UNKS", NA)) %>%
   select(-c(abundance, total_quadrats, quadrat_area))
 
 # add in octocorals
-octo_juv <- read.csv(here::here("clean_data", "octo_juv_clean.csv"))
+octo_juv <- read.csv(here::here("clean_data", "octo_juv_clean_full.csv"))
 octo_juv_sub <- octo_juv %>%
   mutate(taxa = "OCTO") %>% # add octo taxa ID for merge
   select(-c(abundance, total_quadrats, quadrat_area))
@@ -208,8 +235,8 @@ juv_wide <- juv_full %>%
               values_from = density,
               values_fill = 0) %>%
   # set year to factors
-  mutate(study_year = as.factor(recruit_year), # setting juv_year as the primary year of interest
-         unique_id = paste0(site_name, "-", study_year)
+  mutate(year = as.factor(recruit_year), # setting juv_year as the primary year of interest
+         unique_id = paste0(site_name, "-", year)
   ) %>%
   mutate(
     design = case_when(
@@ -220,7 +247,7 @@ juv_wide <- juv_full %>%
 
 # set metadata
 juv_meta <- c("cover_year",  "recruit_year", "region", "habitat", "site_name",
-                  "study_year", "unique_id", "design")
+                  "year", "unique_id", "design")
 
 # subset species matrix
 juv_matrix <- as.matrix(juv_wide[,-which(names(juv_wide) %in% juv_meta)])
@@ -230,14 +257,14 @@ rownames(juv_matrix) <- juv_wide$unique_id
 juv_matrix_log <- log(juv_matrix + 1)
 
 # conduct PERMANOVA
-adonis2(juv_matrix_log ~ study_year*design, method = "bray", by = "terms",
+adonis2(juv_matrix_log ~ year*design, method = "bray", by = "terms",
         data = juv_wide)
 # Df SumOfSqs      R2       F Pr(>F)    
-# study_year         1  0.02648 0.01032  0.8124  0.502    
-# design             1  0.69911 0.27250 21.4470  0.001 ***
-#   study_year:design  1  0.01448 0.00565  0.4443  0.722    
-# Residual          56  1.82544 0.71153                   
-# Total             59  2.56552 1.00000                   
+# year         2   0.0492 0.01183  0.7378  0.589    
+# design       1   1.2731 0.30626 38.1845  0.001 ***
+#   year:design  2   0.0341 0.00819  0.5108  0.812    
+# Residual    84   2.8005 0.67372                   
+# Total       89   4.1568 1.00000                        
 
 
 # run ordination
@@ -253,20 +280,32 @@ juv_site_scores_full <- juv_site_scores %>%
 
 juv_species_scores <- as.data.frame(scores(juv_ord3, "species"))
 juv_species_scores$species <- rownames(juv_species_scores)
+juv_species_scores <- juv_species_scores %>%
+  mutate(species_fullname = case_when(species == "AGAR" ~ "Agaricidae",
+                                      species == "FAVI" ~ "Faviidae",
+                                      species == "PORI" ~ "Poritidae",
+                                      species == "SIDE" ~ "Siderastridae",
+                                      species == "OCTO" ~ "Octocorallia",
+                                      T ~ species))
 
 # plot
 (juv_nmds_plot <- 
     ggplot() + 
     # add sites
-    geom_point(data= juv_site_scores_full, aes(x=NMDS1,y=NMDS2, colour = study_year, shape = design)) + 
+    geom_point(data= juv_site_scores_full, aes(x=NMDS1,y=NMDS2, colour = year, shape = design)) + 
     # add species
-    geom_text(data = juv_species_scores, aes(x = NMDS1, y = NMDS2, label=species)) +
-    stat_ellipse(data= juv_site_scores_full, aes(x=NMDS1,y=NMDS2, colour = study_year, linetype = design),
+    geom_text(data = juv_species_scores, aes(x = NMDS1, y = NMDS2, label=species_fullname)) +
+    stat_ellipse(data= juv_site_scores_full, aes(x=NMDS1,y=NMDS2, colour = year, linetype = design),
                  level = 0.95) +
     labs(title = "c.", colour = "Year", shape = "Region", linetype = "Region") +
     theme_bw() + 
-    scale_colour_manual(values = c("2016" = "#f77976",
-                                   "2017" = "#9336fd") ) +
+   scale_colour_manual(
+     values = c(
+       "2014" = "#E69F00",
+       "2015" = "#56B4E9",
+       "2016" = "#009E73",
+       "2017" = "#9336fd",
+       "2018" = "#CC79A7") ) +
     guides(colour = guide_legend(title.position = "top"),
            shape = guide_legend(title.position = "top")) +
     theme(axis.title.x = element_text(size=18), 
@@ -288,7 +327,7 @@ juv_species_scores$species <- rownames(juv_species_scores)
                          common.legend = T, legend = "bottom")
 )
 
-# ggsave(filename = "output/nmds_panel.png", nmds_panel,
+# ggsave(filename = "output/nmds_panel_v2.png", nmds_panel,
 #        width = 16, height = 6, dpi = "retina")
 
 

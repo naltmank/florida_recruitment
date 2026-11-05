@@ -12,13 +12,23 @@ rec_sub <- rec_table %>%
   filter(str_detect(term, "_dev"),
          taxa != "OCTO") %>%
   mutate(significance = case_when(p.value < 0.05 ~ "P < 0.05",
-                                  T ~ "P > 0.05"))
+                                  T ~ "P > 0.05"),
+         species_fullname = case_when(taxa == "AGAR" ~ "Agaricidae",
+                                      taxa == "FAVI" ~ "Faviidae",
+                                      taxa == "PORI" ~ "Poritidae",
+                                      taxa == "SIDE" ~ "Siderastridae",
+                                      T ~ taxa))
 
 juv_sub <- juv_table %>%
   filter(str_detect(term, "_dev"),
          taxa != "OCTO") %>%
   mutate(significance = case_when(p.value < 0.05 ~ "P < 0.05",
-                                  T ~ "P > 0.05"))
+                                  T ~ "P > 0.05"),
+         species_fullname = case_when(taxa == "AGAR" ~ "Agaricidae",
+                                      taxa == "FAVI" ~ "Faviidae",
+                                      taxa == "PORI" ~ "Poritidae",
+                                      taxa == "SIDE" ~ "Siderastridae",
+                                      T ~ taxa))
 
 #### PLOT ####
 okabe_ito <- c(
@@ -43,13 +53,13 @@ legend_order <- c(
 
 (rec_plot <- 
    ggplot() +
-   geom_point(data = rec_sub, aes(x = estimate, y = taxa, colour = factor(term, levels = legend_order), shape = significance),
+   geom_point(data = rec_sub, aes(x = estimate, y = species_fullname, colour = factor(term, levels = legend_order), shape = significance),
               position = position_dodge(0.5), size = 4) +
    geom_errorbar(data = rec_sub, aes(xmin = conf.low, xmax = conf.high,
-                                     y = taxa, colour = factor(term, levels = legend_order),
+                                     y = species_fullname, colour = factor(term, levels = legend_order),
                                      linetype = significance),
                  width = 0.1, position = position_dodge(0.5)) +
-   scale_y_discrete(limits = c("SIDE", "PORI", "FAVI", "AGAR")) +
+   scale_y_discrete(limits = c("Siderastridae", "Poritidae", "Faviidae", "Agaricidae")) +
    geom_vline(xintercept = 0, linetype = 2) +
    scale_shape_manual(values = c("P < 0.05" = 19,
                                  "P > 0.05" = 1)) + 
@@ -82,14 +92,14 @@ legend_order <- c(
 
 (juv_plot <- 
     ggplot() +
-    geom_point(data = juv_sub, aes(x = estimate, y = taxa, colour = factor(term, levels = legend_order),
+    geom_point(data = juv_sub, aes(x = estimate, y = species_fullname, colour = factor(term, levels = legend_order),
                                    shape = significance),
                position = position_dodge(0.5), size = 4) +
     geom_errorbar(data = juv_sub, aes(xmin = conf.low, xmax = conf.high,
-                                      y = taxa, colour = factor(term, levels = legend_order),
+                                      y = species_fullname, colour = factor(term, levels = legend_order),
                                       linetype = significance),
                   width = 0.1, position = position_dodge(0.5)) +
-    scale_y_discrete(limits = c("SIDE", "PORI", "FAVI", "AGAR")) +
+    scale_y_discrete(limits = c("Siderastridae", "Poritidae", "Faviidae", "Agaricidae")) +
     geom_vline(xintercept = 0, linetype = 2) +
     scale_shape_manual(values = c("P < 0.05" = 19,
                                   "P > 0.05" = 1)) + 
